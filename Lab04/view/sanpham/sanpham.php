@@ -3,7 +3,7 @@
         Danh Sản Phẩm
     </div>
     <br>
-        <center><td><a href="?ctrller=sanpham&act=insertSanpham"><button class="btn btn-danger">Thêm Sản Phẩm Mới</button></a></td></center>
+        <center><td><a href="index.php?ctrller=sanpham&act=insertSanpham"><button class="btn btn-danger">Thêm Sản Phẩm Mới</button></a></td></center>
     <br>
 <table class="table table-striped table-condensed">
     <thead>
@@ -39,7 +39,7 @@
                 echo'
                 </a>
                 </td>
-                <td><a href="index.php?ctrller=customer&act=edit&idUser='.$cus['masp'].'"><button class="btn btn-danger">Sửa</button></a>    <a href="index.php?ctrller=sanpham&act=deleteSP&masp='.$cus['masp'].'"><button class="btn btn-danger">Xoá</button></a></td>
+                <td><a href="#"><button class="btn btn-danger">Sửa</button></a>    <a href="index.php?ctrller=sanpham&act=deleteSP&masp='.$cus['masp'].'"><button class="btn btn-danger">Xoá</button></a></td>
                 </tr>
             ';
         }    

@@ -40,7 +40,7 @@
                       <td>'.$pro['releaseDate'].'</td>
                       <td>'.$pro['price'].'</td>
                       <td>'.$pro['starRating'].'</td>
-                      <td><a href="index.php?ctrller=products&act=delete&idProduct='.$pro['productId'].'">Xoá</a> | <a href="index.php?ctrller=products&act=edit&idProduct='.$pro['productId'].'">Sửa</a></td>
+                      <td><a href="#">Xoá</a> | <a href="index.php?ctrller=products&act=edit&idProduct='.$pro['productId'].'">Sửa</a></td>
                     </tr>
                   ';
                 }

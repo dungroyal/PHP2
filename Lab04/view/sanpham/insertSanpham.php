@@ -32,7 +32,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="filebutton">Hình ảnh phụ (Nhiều ảnh)</label>
             <div class="col-md-4">
-                <input id="filebutton" name="image2" class="input-file" type="file" multiple>
+                <input id="filebutton" name="listImages[]" class="input-file" type="file" multiple>
             </div>
         </div>
         <!-- Button -->

@@ -22,25 +22,31 @@
                     move_uploaded_file($_FILES['image1']['tmp_name'], $target_file);
                 }
 
-                if ($_FILES['image2']['name']!="") {         
-                    $image2= basename($_FILES['image2']['name']);
-                    $target_file ="assets/images/". $image2;
-                    move_uploaded_file($_FILES['image2']['tmp_name'], $target_file);
+                if ($_FILES['listImages']['name']!="") {
+                    $listImages="";
+                    foreach ($_FILES['listImages']['name'] as $key=>$valuse) {
+                        $image2=basename($_FILES['listImages']['name'][$key]);
+                        $target_file ="assets/images/".$image2;
+                        move_uploaded_file($_FILES['listImages']['tmp_name'][$key], $target_file);
+                        $listImages.=",".$image2;
+                    }
+                    $listImages=ltrim($listImages,",");
                 }
 
                 $sp=new SANPHAM();
-                $sp->insertSanpham($nameSP,$image1,$image2);
+                $sp->insertSanpham($nameSP,$image1,$listImages);
                 $sanp=$sp->getAllSanpham();
                 header('location: index.php?ctrller=sanpham');
             }
+            include "view/sanpham/insertSanpham.php";
+        break;
 
-            case 'deleteSP':
-                $masp=$_GET['masp'];
-                $sp= new SANPHAM();
-                $sp->delSanpham($masp);
-                $sanp=$sp->getAllSanpham();      
-                header("location:index.php?ctrller=sanpham");
-
+        case 'deleteSP':
+            $masp=$_GET['masp'];
+            $sp= new SANPHAM();
+            $sp->delSanpham($masp);
+            $sanp=$sp->getAllSanpham();      
+            header("location:index.php?ctrller=sanpham");
         break;
         
     }
