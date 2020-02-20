@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>PHP2-Demo</title>
@@ -8,22 +8,22 @@
 <body>
     <div class="container">
     <?php 
-        include_once 'model/catalog.php';
-        $cata=new CATALOG();
-        $catalog=$cata->getAllCatalog();
+        // include_once 'model/catalog.php';
+        // $cata=new CATALOG();
+        // $catalog=$cata->getAllCatalog();
 
-        include 'view/site/header.php'; 
-        //load controler
-        $ctrl="home";
-        if(isset($_GET['ctrller']))
-            $ctrl=$_GET['ctrller'];
-        include 'controller/'.$ctrl.'.php'; 
+        // include 'view/site/header.php'; 
+        // //load controler
+        // $ctrl="home";
+        // if(isset($_GET['ctrller']))
+        //     $ctrl=$_GET['ctrller'];
+        // include 'controller/'.$ctrl.'.php'; 
 
-        //end controller
-        include 'view/site/footer.php'; 
-    
+        // //end controller
+        // include 'view/site/footer.php'; 
+        header("Location: view/site/header.php")
     ?>
 	</div>
    
 </body>
-</html>
+</html> -->

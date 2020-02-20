@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>BookStore | Sách cho mọi người!</title>
+    <link rel="icon" type="image/png" href="assets/img/logo_FA.png">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -36,20 +36,20 @@
             <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                        <i class=" fa fa-envelope"></i> hello.colorlib@gmail.com
+                        <i class=" fa fa-envelope"></i> Dungdqps08542@fpt.edu.vn
                     </div>
                     <div class="phone-service">
-                        <i class=" fa fa-phone"></i> +65 11.188.888
+                        <i class=" fa fa-phone"></i> 0398022720
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">German </option>
+                            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
+                                data-title="English">VN</option>
+                            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                                data-title="Bangladesh">EN</option>
                         </select>
                     </div>
                     <div class="top-social">
@@ -66,16 +66,16 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                            <a href="index.php">
+                                <img src="assets/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
+                            <button type="button" class="category-btn">Tìm kiếm sách</button>
                             <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
+                                <input type="text" placeholder="Muốn tìm giề?">
                                 <button type="button"><i class="ti-search"></i></button>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -110,7 +110,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="assets/img/select-product-2.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -129,8 +129,8 @@
                                         <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="#" class="primary-btn view-card">GIỎ HÀNG</a>
+                                        <a href="#" class="primary-btn checkout-btn">THANH TOÁN</a>
                                     </div>
                                 </div>
                             </li>
@@ -145,32 +145,23 @@
                 <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All departments</span>
+                        <span>Thể loại sách</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                            <?php
+                                foreach ($listCata as $cata) {
+                                    echo '
+                                        <li><a href="#">'.$cata['name'].'</a></li>
+                                    ';
+                                }
+                            ?>
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li class="active"><a href="./index.html">TRANG CHỦ</a></li>
+                        <li><a href="./shop.html">CỬA HÀNG</a></li>
+                        <li><a href="./contact.html">LIÊN HỆ</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>
