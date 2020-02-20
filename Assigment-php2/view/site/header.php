@@ -11,7 +11,7 @@
           foreach ($catalog as $ca) {
             echo '
             <li class="nav-item">
-              <a class="nav-link" href="index.php?ctrller=product?cateId='.$ca['id'].'">'.$ca['name'].'</a>
+              <a class="nav-link" href="index.php?ctrller=product&cateId='.$ca['id'].'">'.$ca['name'].'</a>
             </li>
             ';
           }        

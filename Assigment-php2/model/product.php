@@ -1,22 +1,21 @@
 <?php
-    include('database.php');
-    class CATALOG extends DATABASE
+    include_once('database.php');
+    class PRODUCT extends DATABASE
     {
         function __construct()
         {
             parent::__construct();
         }
-        
-        function getAllCatalog()
+        function getAllProduct()
         {
-            $this->SetQuery("SELECT * from catalog");
+            $this->SetQuery("SELECT * from product");
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
-        }
-
-        function getCatelog($id)
+        }   
+        
+        function getProduct_by_idCat($id)
         {
-            $this->SetQuery("SELECT * from catalog where id=".$id);
+            $this->SetQuery("SELECT * from product where catalog_id=".$id);
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }

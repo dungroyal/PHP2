@@ -10,7 +10,7 @@
     <?php 
         include_once 'model/catalog.php';
         $cata=new CATALOG();
-        $catalog=$cata->getAllProduct();
+        $catalog=$cata->getAllCatalog();
 
         include 'view/site/header.php'; 
         //load controler
