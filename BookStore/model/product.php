@@ -15,7 +15,18 @@
         
         function getProduct_by_idCat($id)
         {
-            $this->SetQuery("SELECT * from product where idCatalog=".$id);
+            $sql="SELECT * from product where 1";
+            $sql.=" AND idCatalog=".$id;
+            $sql.=" order by id desc limit 0,6";
+            $this->SetQuery($sql);
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }
+
+        function getProduct_by_id($id)
+        {
+            $sql="SELECT * from product where id=".$id;
+            $this->SetQuery($sql);
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }

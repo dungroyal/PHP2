@@ -1,4 +1,6 @@
 <?php
+    ob_start();
+    SESSION_START();
     include_once 'model/catalog.php';
     include_once 'model/product.php';
     $cata=new CATALOG();

@@ -6,7 +6,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="assets/img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="assets/uploads/footer-logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Địa chỉ: 992 Âu cơ, Phường 14, Q.Tân Bình, TP.Hồ Chí Minh</li>

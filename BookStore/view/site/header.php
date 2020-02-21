@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BookStore | Sách cho mọi người!</title>
-    <link rel="icon" type="image/png" href="assets/img/logo_FA.png">
+    <link rel="icon" type="image/png" href="assets/uploads/logo_FA.png">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -46,9 +46,9 @@
                     <a href="#" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
+                            <option value='yt' data-image="assets/uploads/flag-1.jpg" data-imagecss="flag yt"
                                 data-title="English">VN</option>
-                            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                            <option value='yu' data-image="assets/uploads/flag-2.jpg" data-imagecss="flag yu"
                                 data-title="Bangladesh">EN</option>
                         </select>
                     </div>
@@ -67,7 +67,7 @@
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
                             <a href="index.php">
-                                <img src="assets/img/logo.png" alt="">
+                                <img src="assets/uploads/logo.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -85,56 +85,76 @@
                             <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span>1</span>
+                                    <?php echo ""; ?>
                                 </a>
                             </li>
                             <li class="cart-icon">
-                                <a href="#">
+                                <a href="index.php?ctrller=cart">
                                     <i class="icon_bag_alt"></i>
-                                    <span>3</span>
+                                    <?php
+                                        if (isset($_SESSION['cart_items'])) {
+                                            $soluong=count($_SESSION['cart_items']);
+                                            
+                                            }
+                                    ?>
+                                    <?php
+                                    
+                                    if (isset($soluong) && $soluong!=0) {
+                                        echo "<span>".$soluong."</span>";
+                                    }else {
+                                        echo "";
+                                    }
+                                    
+                                    ?>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="assets/img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="assets/img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
+
+                                                <?php
+                                                    $tongCong=0;
+                                                    if (isset($_SESSION['cart_items'])) {
+                                                    foreach ($_SESSION['cart_items'] as $items) {
+                                                        $idProduct=$items['idProduct'];
+                                                        $p=new PRODUCT();
+                                                        $productById=$p->getProduct_by_id($idProduct);
+                                                        $proById=$productById->fetch(pdo::FETCH_ASSOC);
+                                                        $tongCong+=$items['quantity']*$proById['specialPrice'];
+
+                                                        echo'
+                                                            <tr>
+                                                                <td class="si-pic"><img src="assets/uploads/'.$proById['image'].'"  width="70px"  alt=""></td>
+                                                                <td class="si-text">
+                                                                    <div class="product-selected">
+                                                                        <p>'.number_format($proById['specialPrice']).' đ</p>
+                                                                        <h6>'.$proById['name'].'</h6>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="si-close">
+                                                                    <i class="ti-close"></i>
+                                                                </td>
+                                                            </tr>
+                                                        ';
+                                                    }
+                                                    
+                                                }
+                                                
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
+                                        <span>Tổng cộng:</span>
+                                        <h5><?=number_format($tongCong);?> đ</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">GIỎ HÀNG</a>
-                                        <a href="#" class="primary-btn checkout-btn">THANH TOÁN</a>
+                                        <a href="index.php?ctrller=cart" class="primary-btn view-card">GIỎ HÀNG</a>
+                                        <a href="index.php?ctrller=checkout" class="primary-btn checkout-btn">THANH TOÁN</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price"><?=number_format($tongCong);?> đ</li>
                         </ul>
                     </div>
                 </div>
@@ -150,7 +170,7 @@
                             <?php
                                 foreach ($listCata as $cata) {
                                     echo '
-                                        <li><a href="#">'.$cata['name'].'</a></li>
+                                        <li><a href="index.php?ctrller=product&idCatalog='.$cata['id'].'">'.$cata['name'].'</a></li>
                                     ';
                                 }
                             ?>
@@ -159,9 +179,9 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">TRANG CHỦ</a></li>
-                        <li><a href="./shop.html">CỬA HÀNG</a></li>
-                        <li><a href="./contact.html">LIÊN HỆ</a></li>
+                        <li><a href="index.php">TRANG CHỦ</a></li>
+                        <li><a href="index.php?ctrller=product">CỬA HÀNG</a></li>
+                        <li><a href="index.php?ctrller=contact">LIÊN HỆ</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>
