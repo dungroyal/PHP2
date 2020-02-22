@@ -55,10 +55,13 @@
                 $addresss=$_POST['addresss'];
                 $city=$_POST['city'];
                 $date_add=$_POST['date'];
-
-                $p= new CUSTOMER();
+                if ($first_name!="") {
+                    $p= new CUSTOMER();
                 $p->insertCustomer($first_name,$last_name,$gender,$phone,$email,$addresss,$city,$date_add);
                 $custm=$p->getAllCustomer();
+                header('Location: index.php?ctrller=customer');
+                }
+                
             }       
 
                 include "view/customer/addCustomer.php";

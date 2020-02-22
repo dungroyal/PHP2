@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 19, 2020 lúc 06:02 PM
--- Phiên bản máy phục vụ: 10.4.8-MariaDB
--- Phiên bản PHP: 7.3.11
+-- Thời gian đã tạo: Th2 22, 2020 lúc 03:40 PM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,11 +47,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `first_name`, `last_name`, `gender`, `email`, `address`, `city`, `state`, `phone`, `created_at`, `updated_at`) VALUES
-(3, 'Lê Tường', 'Bảo Nhi', 'Nữ', 'hailey.hettinger@daniel.com', '123 Tô Hiến Thành,Quận 10', 'TPHCM', NULL, '70000', '2020-01-19 08:54:58', '2020-01-19 08:54:58'),
-(4, 'Nguyễn Ngọc', 'Hoàng', 'Nam', 'alexa.crona@yahoo.com', '256 Huỳnh Tấn Phát,Quận 7', 'TPHCM', NULL, '70000', '2020-01-19 08:54:58', '2020-01-19 08:54:58'),
-(5, 'Mạc Thiên', 'Tấn', 'Nam', 'awelch@yahoo.com', '124, hẻm 12 Lê Lai', 'TPHCM', NULL, '70000', '2020-01-19 08:54:58', '2020-01-19 08:54:58'),
-(18, 'Doan', 'Dung', 'Nam', 'doanquocdung55@gmail.com', '992 Âu Cơ, Phường 14, Quận Tân Bình, 34D, Đường số 12, Phường 11, Quận Gò Vấp', 'Hồ Chí Minh', NULL, '0398022720', '2020-02-12 17:00:00', '2020-02-12 17:00:00'),
-(20, 'Le', 'Van Teo', 'Nam', 'Teodaica@gmail.com', 'Go vap', 'Ho Chi Minh', NULL, '0312544785', '2020-02-12 17:00:00', '2020-02-12 17:00:00');
+(3, 'Lê Tường', 'Bảo Nhi', 'Nữ', 'hailey.hettinger@daniel.com', '123 Tô Hiến Thành,Quận 10', 'TPHCM', NULL, '70000', '2020-01-19 01:54:58', '2020-01-19 01:54:58'),
+(4, 'Nguyễn Ngọc', 'Hoàng', 'Nam', 'alexa.crona@yahoo.com', '256 Huỳnh Tấn Phát,Quận 7', 'TPHCM', NULL, '70000', '2020-01-19 01:54:58', '2020-01-19 01:54:58'),
+(5, 'Mạc Thiên', 'Tấn', 'Nam', 'awelch@yahoo.com', '124, hẻm 12 Lê Lai', 'TPHCM', NULL, '70000', '2020-01-19 01:54:58', '2020-01-19 01:54:58'),
+(18, 'Doan', 'Dung', 'Nam', 'doanquocdung55@gmail.com', '992 Âu Cơ, Phường 14, Quận Tân Bình, 34D, Đường số 12, Phường 11, Quận Gò Vấp', 'Hồ Chí Minh', NULL, '0398022720', '2020-02-12 10:00:00', '2020-02-12 10:00:00'),
+(20, 'Le', 'Van Teo', 'Nam', 'Teodaica@gmail.com', 'Go vap', 'Ho Chi Minh', NULL, '0312544785', '2020-02-12 10:00:00', '2020-02-12 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,8 @@ CREATE TABLE `tblsanpham` (
 INSERT INTO `tblsanpham` (`masp`, `tensp`, `anhchinh`, `anhphu`) VALUES
 (31, 'Modem Wifi Asua', '93c9cb6eaf954201b52c8d307b5edade_asus rt-ac1300uhp_2.jpg', '723a9cac629c01f9f6bcc0601e8062a0.jpg,25593_router_wifi_asus_rt_ac1300uhp_2.jpg,25593_router_wifi_asus_rt_ac1300uhp_5.jpg,P_setting_fff_1_90_end_600.jpg'),
 (32, 'Thương hiệu', 'ava-15622530448502074507693-crop-1562253268280262597910.png', '1280px-Acer_2011.svg.png,asus-logo-hd-photo-15.png,Lenovo_Global_Corporate_Logo.png,logo-dell-png.png,logo-hp-png.png,Microsoft-Logo-PNG.png,MSI_logo_for_share2.png'),
-(33, 'Hoá thúi địt', '70378770_500134044097645_9075427606261661696_n.jpg', '70672005_119173202800298_2866196749393854464_n.jpg,70838156_2307717716206657_3994007311092809728_n.jpg,71071239_2307717326206696_4887788145669570560_n.jpg,71574218_2307717516206677_4553325796650909696_n.jpg');
+(33, 'Hoá thúi địt', '70378770_500134044097645_9075427606261661696_n.jpg', '70672005_119173202800298_2866196749393854464_n.jpg,70838156_2307717716206657_3994007311092809728_n.jpg,71071239_2307717326206696_4887788145669570560_n.jpg,71574218_2307717516206677_4553325796650909696_n.jpg'),
+(34, 'ROYAL', 'product-1.jpg', 'product-2.jpg,product-3.jpg');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -130,7 +131,7 @@ ALTER TABLE `tblsanpham`
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `tblproduct`
@@ -142,7 +143,7 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT cho bảng `tblsanpham`
 --
 ALTER TABLE `tblsanpham`
-  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
