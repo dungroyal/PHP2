@@ -34,6 +34,7 @@
                             <tbody>
 
                             <?php
+                            if (isset($_SESSION['cart_items'])) {
                                 $tongCong=0;
                                 foreach ($_SESSION['cart_items'] as $items) {
                                     $idProduct=$items['idProduct'];
@@ -60,10 +61,15 @@
                                     </tr>
                                     ';
                                 }
+                            }else {
+                                echo '<h4><center style="padding-bottom: 30px;color: red;font-weight: bold;">Chưa có sản phẩm nào trong giỏ hàng ! </center></h4>';
+                                echo '<h4><center style="padding-bottom: 80px;color: black;font-weight: bold;"><a href="?ctrller=product">Tiếp tục mua hàng!</a></h4>';
+                            } 
                             ?>
                             </tbody>
                         </table>
                     </div>
+                   
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
@@ -81,10 +87,26 @@
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">Tổng cộng <span><?=number_format($tongCong);?> đ</span></li>
-                                    <li class="cart-total">Thành tiền <span><?=number_format($tongCong);?> đ</span></li>
+                                    <li class="subtotal">Tổng cộng <span>
+                                    <?php
+                                        if (isset($tongCong)) {
+                                            echo number_format($tongCong)."đ";
+                                        }else {
+                                            echo "Giỏ hàng trống!";
+                                        }
+                                    ?>    
+                                    </span></li>
+                                    <li class="cart-total">Thành tiền <span>
+                                    <?php
+                                        if (isset($tongCong)) {
+                                            echo number_format($tongCong).' đ';
+                                        }else {
+                                            echo "Giỏ hàng trống!";
+                                        }
+                                    ?>          
+                                </span></li>
                                 </ul>
-                                <a href="?ctrller=checkout" class="proceed-btn">TIẾN HÀNH THANH TOÁN</a>
+                                <a href="?ctrller=cart&act=checkout" class="proceed-btn">TIẾN HÀNH THANH TOÁN</a>
                             </div>
                         </div>
                     </div>

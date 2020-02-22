@@ -17,7 +17,7 @@
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form">
+            <form action="index.php?ctrller=cart&act=checkout" method="post" class="checkout-form">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="checkout-content">
@@ -27,29 +27,29 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <label for="cun-name">Họ và tên<span>*</span></label>
-                                <input type="text" id="cun-name">
+                                <input type="text" name="name" id="cun-name" required >
                             </div>
                             <div class="col-lg-12">
                                 <label for="street">Địa chỉ<span>*</span></label>
-                                <input type="text" id="street" class="street-first">
+                                <input type="text" name="address" id="street" class="street-first" required>
                             </div>                            
                             <div class="col-lg-12">
                                 <label for="town">Tỉnh, thành phố<span>*</span></label>
-                                <input type="text" id="town">
+                                <input type="text" name="city" id="town" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Địa chỉ Email<span>*</span></label>
-                                <input type="text" id="email">
+                                <input type="text" name="email" id="email" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại<span>*</span></label>
-                                <input type="text" id="phone">
+                                <input type="text" name="phone" id="phone" required>
                             </div>
                             <div class="col-lg-12">
                                 <div class="create-item">
                                     <label for="acc-create">
                                         Tạo tài khoản?
-                                        <input type="checkbox" id="acc-create">
+                                        <input type="checkbox" name="addaccount" id="acc-create">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -65,11 +65,37 @@
                             <div class="order-total">
                                 <ul class="order-table">
                                     <li>Sản phẩm <span>Thành tiền</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
-                                    <li class="fw-normal">Thành tiền <span>$240.00</span></li>
-                                    <li class="total-price">Tổng cộng <span>$240.00</span></li>
+
+                                    <?php
+                                        if (isset($_SESSION['cart_items'])) {
+                                            $tongCong=0;
+                                            foreach ($_SESSION['cart_items'] as $items) {
+                                                $idProduct=$items['idProduct'];
+                                                $p=new PRODUCT();
+                                                $productById=$p->getProduct_by_id($idProduct);
+                                                $proById=$productById->fetch(pdo::FETCH_ASSOC);
+                                                $tongCong+=$items['quantity']*$proById['specialPrice'];
+                                                echo'<li class="fw-normal">'.$proById['name'].'  x <strong>'.$items['quantity'].'</strong> <span>'.number_format($items['quantity']*$proById['specialPrice']).' đ</span></li>';
+                                            }
+                                        }
+                                   ?>
+                                   <li class="fw-normal"><strong>Thành tiền </strong><span>
+                                   <?php
+                                        if (isset($tongCong)) {
+                                            echo number_format($tongCong).' đ';
+                                        }
+                                    ?>  
+                                   </span></li>
+                                   <li class="fw-normal"><strong>Giảm giá </strong> <span>- 0 đ 
+                                   </span></li>
+                                   <li class="total-price"><strong>Tổng cộng </strong> <span>
+                                   <?php
+                                        if (isset($tongCong)) {
+                                            echo number_format($tongCong).' đ
+                                            <input type="hidden" name="tongcong" value="'.$tongCong.'">
+                                            ';}
+                                    ?>  
+                                   </span></li>
                                 </ul>
                                 <div class="payment-check">
                                     <div class="pc-item">
@@ -88,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div class="order-btn">
-                                    <button type="submit" class="site-btn place-btn">Thanh toán</button>
+                                    <input type="submit" name="checkout" class="site-btn place-btn" value="Thanh toán">
                                 </div>
                             </div>
                         </div>

@@ -10,5 +10,9 @@
                 $cataParent=$p->getCatalogBy(1,3,0);
                 include './view/site/home.php';
                 break;
+
+            case "contact":
+                include './view/site/contact.php';
+                break;
         }
 ?>

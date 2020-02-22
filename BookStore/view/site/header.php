@@ -71,7 +71,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7">
+                    <div class="col-lg-7 col-md-7" style="padding-top: 20px;">
                         <div class="advanced-search">
                             <button type="button" class="category-btn">Tìm kiếm sách</button>
                             <div class="input-group">
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-3">
+                    <div class="col-lg-3 text-right col-md-3"  style="padding-top: 20px;">
                         <ul class="nav-right">
                             <li class="heart-icon">
                                 <a href="#">
@@ -113,8 +113,8 @@
                                             <tbody>
 
                                                 <?php
-                                                    $tongCong=0;
                                                     if (isset($_SESSION['cart_items'])) {
+                                                    $tongCong=0;
                                                     foreach ($_SESSION['cart_items'] as $items) {
                                                         $idProduct=$items['idProduct'];
                                                         $p=new PRODUCT();
@@ -138,23 +138,41 @@
                                                         ';
                                                     }
                                                     
+                                                }else{
+                                                    echo '<p><center>Chưa có sản phẩm nào!</center></p>';
                                                 }
                                                 
                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="select-total">
-                                        <span>Tổng cộng:</span>
-                                        <h5><?=number_format($tongCong);?> đ</h5>
-                                    </div>
+                                    <?php
+                                        if (isset($tongCong)) {
+                                            echo '
+                                                <div class="select-total">
+                                                    <span>Tổng cộng:</span>
+                                                    <h5> '.number_format($tongCong).' đ</h5>
+                                                </div>
+                                            ';
+                                        }else {
+                                            echo "";
+                                        }
+                                    ?>
                                     <div class="select-button">
                                         <a href="index.php?ctrller=cart" class="primary-btn view-card">GIỎ HÀNG</a>
-                                        <a href="index.php?ctrller=checkout" class="primary-btn checkout-btn">THANH TOÁN</a>
+                                        <a href="?ctrller=cart&act=checkout" class="primary-btn checkout-btn">THANH TOÁN</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price"><?=number_format($tongCong);?> đ</li>
+                            <li class="cart-price">
+                                <?php
+                                    if (isset($tongCong)) {
+                                        echo number_format($tongCong)." đ";
+                                    }else {
+                                        echo "Giỏ hàng trống!"; 
+                                    }
+                                ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -181,17 +199,7 @@
                     <ul>
                         <li><a href="index.php">TRANG CHỦ</a></li>
                         <li><a href="index.php?ctrller=product">CỬA HÀNG</a></li>
-                        <li><a href="index.php?ctrller=contact">LIÊN HỆ</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="index.php?ctrller=home&act=contact">LIÊN HỆ</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
