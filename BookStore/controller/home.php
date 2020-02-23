@@ -14,5 +14,13 @@
             case "contact":
                 include './view/site/contact.php';
                 break;
+
+            case "login":
+                include './view/site/login.php';
+                break;
+
+            case "register":
+                include './view/site/register.php';
+                break;
         }
 ?>

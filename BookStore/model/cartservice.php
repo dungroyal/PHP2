@@ -34,4 +34,13 @@
             unset($_SESSION['cart_items']);
             session_unset();
         }
+
+        function insertDetail($id)
+        {
+            $customerObj=new CUSTOMER();
+            foreach($_SESSION['cart_items'] as $item)
+            {
+                $customerObj->insertOderDetail($id,$item['idProduct'],$item['quantity']);
+            }
+        }
     }

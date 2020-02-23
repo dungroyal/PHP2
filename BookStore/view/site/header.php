@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+                    <a href="?ctrller=home&act=login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="assets/uploads/flag-1.jpg" data-imagecss="flag yt"

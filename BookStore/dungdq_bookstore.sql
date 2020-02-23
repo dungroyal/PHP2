@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 22, 2020 lúc 04:33 PM
+-- Thời gian đã tạo: Th2 23, 2020 lúc 01:01 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.3.14
 
@@ -67,6 +67,52 @@ INSERT INTO `catalog` (`id`, `name`, `image`, `idParents`, `idChild`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(100) NOT NULL,
+  `full_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `customer`
+--
+
+INSERT INTO `customer` (`id`, `full_name`, `email`, `address`, `phone`, `created_at`, `status`) VALUES
+(35, 'Doan Dung', 'doanquocdung55@gmail.com', '992 Âu Cơ, Phường 14, Quận Tân Bình, 34D, Đường số 12, Phường 11, Quận Gò Vấp', '0398022720', '2020-02-23 13:01:11', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `orderdetail`
+--
+
+CREATE TABLE `orderdetail` (
+  `id` int(100) NOT NULL,
+  `customer_id` int(100) NOT NULL,
+  `product_id` int(100) NOT NULL,
+  `qty` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `orderdetail`
+--
+
+INSERT INTO `orderdetail` (`id`, `customer_id`, `product_id`, `qty`) VALUES
+(27, 35, 4, 2),
+(28, 35, 3, 1),
+(29, 35, 1, 1),
+(30, 35, 2, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `product`
 --
 
@@ -113,6 +159,18 @@ ALTER TABLE `catalog`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `orderdetail`
+--
+ALTER TABLE `orderdetail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -134,6 +192,18 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `catalog`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT cho bảng `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT cho bảng `orderdetail`
+--
+ALTER TABLE `orderdetail`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
