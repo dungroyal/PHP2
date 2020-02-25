@@ -18,6 +18,9 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php?ctrller=product">San pham</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?ctrller=mail">Mail</a>
+        </li>
         <?php
           if(isset($_SESSION["admin"]))
           {
