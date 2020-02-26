@@ -13,13 +13,16 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=catalog">Danh muc</a>
+          <a class="nav-link" href="index.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=product">San pham</a>
+          <a class="nav-link" href="index.php?ctrller=catalog">Danh Mục</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=mail">Mail</a>
+          <a class="nav-link" href="index.php?ctrller=product">Sản Phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?ctrller=mail">MAIL</a>
         </li>
         <?php
           if(isset($_SESSION["admin"]))
@@ -29,8 +32,8 @@
               '.$_SESSION["admin"].'
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="index.php?ctrller=user&act=logout">Log out</a>
-              <a class="dropdown-item" href="index.php?ctrller=user&act=changepassword">Change password</a>
+              <a class="dropdown-item" href="index.php?ctrller=user&act=logout">Đăng xuất</a>
+              <a class="dropdown-item" href="index.php?ctrller=user&act=changepassword">Đổi mật khẩu</a>
             </div>
           </li>';
            
