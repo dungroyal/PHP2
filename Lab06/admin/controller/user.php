@@ -24,9 +24,19 @@
                 include '../view/admin/account/login.php';
                 break;
 
-            case "logout":
+            case "changepassword":
+                if (isset($_POST['btn-changepassword']) && $_POST['btn-changepassword']) {
+                    $oldPass=$_POST['oldPass'];
+                    $newPass=$_POST['newPass'];
+                    echo $oldPass;
+                    echo $newPass;
+                }
+                include '../view/admin/account/changepassword.php';
+                break;
+
+             case "logout":
                 unset($_SESSION['admin']);
-                include '../view/admin/account/login.php';
+                header('Location: index.php');
                 break;
         }
 ?>
