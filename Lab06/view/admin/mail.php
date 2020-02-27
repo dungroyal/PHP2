@@ -1,1 +1,1 @@
-<h1>Gửi Mail</h1>
+<h4>Gửi mail thành công</h4>

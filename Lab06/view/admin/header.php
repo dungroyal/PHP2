@@ -22,6 +22,9 @@
           <a class="nav-link" href="index.php?ctrller=product">Sản Phẩm</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="index.php?ctrller=order">Đơn hàng</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="index.php?ctrller=mail">MAIL</a>
         </li>
         <?php
