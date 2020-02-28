@@ -16,16 +16,10 @@
           <a class="nav-link" href="index.php">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=catalog">Danh Mục</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="index.php?ctrller=product">Sản Phẩm</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="index.php?ctrller=order">Đơn hàng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=mail">MAIL</a>
         </li>
         <?php
           if(isset($_SESSION["admin"]))

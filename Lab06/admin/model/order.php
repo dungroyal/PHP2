@@ -19,6 +19,21 @@
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }
+
+        function getCustomerById($idCustomer)
+        {
+            $this->SetQuery("SELECT * FROM customer Where id=".$idCustomer);
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }
+
+        function updateOrder($id)
+        {
+            $this->SetQuery("UPDATE customer SET status = '1' WHERE id=".$id);
+            $this->result=$this->ThucHienLenh();
+            return $this->result;
+        }
+
         
     }
 ?>

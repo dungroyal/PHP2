@@ -18,6 +18,13 @@
              return true;
          }
      }
+
+     function updatePassword($email,$newpass)
+     {
+         $this->SetQuery("UPDATE `admin` SET `password` = '".$newpass."' WHERE `admin`.`email` ='".$email."' ");
+         $this->result=$this->ThucHienLenh();
+         return $this->result;
+     }
      
 }
 ?>

@@ -1,1 +1,0 @@
-<h4>Gửi mail thành công</h4>

@@ -26,10 +26,21 @@
 
             case "changepassword":
                 if (isset($_POST['btn-changepassword']) && $_POST['btn-changepassword']) {
-                    $oldPass=$_POST['oldPass'];
-                    $newPass=$_POST['newPass'];
-                    echo $oldPass;
-                    echo $newPass;
+                    $username=$_POST['username'];
+                    $oldPass=$_POST['oldpassword'];
+                    $newPass=$_POST['newpassword'];
+
+                    if ($userObj->checkuser($username,$oldPass)) {
+                        if ($newPass!="") {
+                            $userObj->updatePassword($username,$newPass);
+                            header("Location: index.php");
+                        }else{
+                            echo "<center style='font-weight:bold;font-size:20px;color:blue;'>Chưa nhập mật khẩu mới</center>";
+                        }
+                        
+                    }else{
+                        echo "<center style='font-weight:bold;font-size:20px;color:red;'>Sai tên đăng nhập hoặc mật khẩu</center>";
+                    }
                 }
                 include '../view/admin/account/changepassword.php';
                 break;
