@@ -77,9 +77,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="d-block text-center card-footer">
-                                    <a href="#" class="btn-wide btn btn-success">Xem chi tiết</a>
-                                </div>
                             </div>
                         </div>
                     </div>

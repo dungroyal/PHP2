@@ -1,5 +1,5 @@
 <?php
-    $userObj=new USER();
+    $userObj =new USER();
     $action="user";
     if(isset($_GET['act']))
         $action=$_GET['act'];

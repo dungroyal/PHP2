@@ -24,10 +24,11 @@
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">#</th>
+                                                <th class="text-center">Mã User</th>
                                                 <th>Name</th>
-                                                <th class="text-center">City</th>
-                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Phone</th>
+                                                <th class="text-center">Email</th>
+                                                <th class="text-center">Trạng thái</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
@@ -36,7 +37,7 @@
                                                 foreach ($listUser as $user) {
                                                     echo'
                                                     <tr>
-                                                        <td class="text-center text-muted">#345</td>
+                                                        <td class="text-center text-muted">ADM00'.$user['id'].'</td>
                                                         <td>
                                                             <div class="widget-content p-0">
                                                                 <div class="widget-content-wrapper">
@@ -47,17 +48,19 @@
                                                                     </div>
                                                                     <div class="widget-content-left flex2">
                                                                         <div class="widget-heading">'.$user['name'].'</div>
-                                                                        <div class="widget-subheading opacity-7">Web Developer</div>
+                                                                        <div class="widget-subheading opacity-7">Super Admin</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="text-center">Madrid</td>
+                                                        <td class="text-center">'.$user['phone'].'</td>
+                                                        <td class="text-center">'.$user['email'].'</td>
                                                         <td class="text-center">
-                                                            <div class="badge badge-warning">Pending</div>
+                                                            <div class="badge badge-success">Đã xác thực</div>
                                                         </td>
                                                         <td class="text-center">
-                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Xoá</button>
+                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Sửa</button>
                                                         </td>
                                                     </tr>   
                                                     ';
@@ -66,9 +69,6 @@
                                             
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="d-block text-center card-footer">
-                                    <a href="#" class="btn-wide btn btn-success">Xem chi tiết</a>
                                 </div>
                             </div>
                         </div>

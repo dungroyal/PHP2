@@ -1,5 +1,5 @@
 <?php
-    include ('database.php');
+    include_once ('database.php');
     class USER extends DATABASE
     {
         function __construct()
@@ -11,7 +11,7 @@
         function allUser()
         {
             $this->SetQuery("SELECT * FROM `user` WHERE 1 order by id DESC");
-            $this->result=$this->ThucHienLenh();
+            $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }
 

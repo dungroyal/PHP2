@@ -1,7 +1,8 @@
   <?php
     ob_start();
     session_start();
-    $userObj= new USER();
+    include_once '../model/user.php';
+    $userObj=new USER();
   ?>
 <!DOCTYPE html>
 <html lang="en">
