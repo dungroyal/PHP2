@@ -32,31 +32,38 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-center text-muted">#345</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                            <?php
+                                                foreach ($listUser as $user) {
+                                                    echo'
+                                                    <tr>
+                                                        <td class="text-center text-muted">#345</td>
+                                                        <td>
+                                                            <div class="widget-content p-0">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left mr-3">
+                                                                        <div class="widget-content-left">
+                                                                            <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-content-left flex2">
+                                                                        <div class="widget-heading">'.$user['name'].'</div>
+                                                                        <div class="widget-subheading opacity-7">Web Developer</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">John Doe</div>
-                                                                <div class="widget-subheading opacity-7">Web Developer</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Madrid</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-warning">Pending</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
+                                                        </td>
+                                                        <td class="text-center">Madrid</td>
+                                                        <td class="text-center">
+                                                            <div class="badge badge-warning">Pending</div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                        </td>
+                                                    </tr>   
+                                                    ';
+                                                }
+                                            ?>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
