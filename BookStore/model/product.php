@@ -8,7 +8,7 @@
         }
         function getAllProduct()
         {
-            $this->SetQuery("SELECT * from product");
+            $this->SetQuery("SELECT * from product ORDER BY  id DESC  ");
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }   
