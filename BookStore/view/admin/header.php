@@ -18,7 +18,7 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
-                <div>  <a href="index.php">
+                <div>  <a href="../index.php">
                     <img src="../view/admin/assets/images/logo.png" alt="" width="50%">
                     </a>
                 </div>

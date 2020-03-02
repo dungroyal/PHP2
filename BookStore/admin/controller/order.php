@@ -15,6 +15,17 @@
             break;
 
         case 'order-detail':
+            if (isset($_GET['idCustomer'])) {
+                $idCustomer=$_GET['idCustomer'];
+
+                $customerById=$order->getCustomerById($idCustomer);
+                $getCustomer=$customerById->fetch(pdo::FETCH_ASSOC);
+
+                $orderDetail=$order->getAllOrderDetail($idCustomer);
+                $getOrderDetail=$orderDetail->fetchAll(pdo::FETCH_ASSOC);
+
+            }
+
             include './../view/admin/order/order-detail.php';
             break;
 

@@ -8,14 +8,14 @@
         }
         function newAllOrder()
         {
-            $this->SetQuery("SELECT * FROM `customer` WHERE status=0");
+            $this->SetQuery("SELECT * FROM `customer` WHERE status=0 order by id DESC");
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }
 
         function getAllOrder()
         {
-            $this->SetQuery("SELECT * FROM `customer` ");
+            $this->SetQuery("SELECT * FROM `customer` WHERE status!=0 order by id DESC");
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }

@@ -13,6 +13,10 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="page-title-actions">
+                                <a href="index.php?ctrller=product&act=add" class="btn-wide btn btn-info text-right"><i class="fa fa-fw" aria-hidden="true"></i> THÊM SẢN PHẨM MỚI</a>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

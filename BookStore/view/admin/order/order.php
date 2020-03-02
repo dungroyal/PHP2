@@ -26,7 +26,9 @@
                                             <tr>
                                                 <th class="text-center">Mã ĐH</th>
                                                 <th>Name</th>
-                                                <th class="text-center">City</th>
+                                                <th class="text-center">Địa chỉ</th>
+                                                <th class="text-center">Số điện thoại</th>
+                                                <th class="text-center">Thời gian</th>
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
@@ -53,19 +55,19 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">Madrid</td>
+                                                    <td class="text-center">'.$order['address'].'</td>
+                                                    <td class="text-center">'.$order['phone'].'</td>
+                                                    <td class="text-center">'.$order['created_at'].'</td>   
                                                     <td class="text-center">
                                                         <div class="badge badge-danger">Mới</div>
                                                     </td>
                                                     <td class="text-center">
-                                                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Chi tiết</button>
+                                                    <a href="index.php?ctrller=order&act=order-detail&idCustomer='.$order['id'].'"><button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Chi tiết</button></a>
                                                     </td>
                                                 </tr>
                                                 ';
                                             }
-                                        ?>
-                                            
-
+                                        ?>           
 
                                         </tbody>
                                     </table>
@@ -76,7 +78,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
-                                <div class="card-header">Tất cả đơn hàng
+                                <div class="card-header">ĐƠN HÀNG ĐÃ VÀ ĐANG XỬ LÝ
                                 </div>
                                 <div class="table-responsive">
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
@@ -84,7 +86,9 @@
                                             <tr>
                                                 <th class="text-center">Mã ĐH</th>
                                                 <th>Name</th>
-                                                <th class="text-center">City</th>
+                                                <th class="text-center">Địa chỉ</th>
+                                                <th class="text-center">Số điện thoại</th>
+                                                <th class="text-center">Thời gian</th>
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
@@ -122,12 +126,14 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">Madrid</td>
+                                                    <td class="text-center">'.$order['address'].'</td>
+                                                    <td class="text-center">'.$order['phone'].'</td>
+                                                    <td class="text-center">'.$order['created_at'].'</td>
                                                     <td class="text-center">
                                                         '.$status.'
                                                     </td>
                                                     <td class="text-center">
-                                                    <a href="index.php?ctrller=order&act=order-detail"><button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Chi tết</button></a>
+                                                    <a href="index.php?ctrller=order&act=order-detail&idCustomer='.$order['id'].'"><button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Chi tết</button></a>
                                                     </td>
                                                 </tr>
                                                 ';

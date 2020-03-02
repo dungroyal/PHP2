@@ -16,72 +16,125 @@
                             </div>
                         </div>            
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-9">
                                 <div class="main-card mb-3 card">
                                     <div class="card-body"><h5 class="card-title">Thông tin khách hàng</h5>
                                         <table class="mb-0 table">
                                             <thead>
                                             <tr>
-                                                <th></th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th class="text-center">Họ và Tên</th>
+                                                <th class="text-center">Số điện thoại</th>
+                                                <th class="text-center">Email</th>
+                                                <th class="text-center">Địa chỉ</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center"><strong><?=$getCustomer['full_name'];?></strong></td>
+                                                    <td class="text-center">0<?=$getCustomer['phone'];?></td>
+                                                    <td class="text-center"><?=$getCustomer['email'];?></td>
+                                                    <td class="text-center"><?=$getCustomer['address'];?></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Thông tin đơn hàng</h5>
-                                        <table class="mb-0 table table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
                                 <div class="main-card mb-3 card">
                                     <div class="card-body"><h5 class="card-title">Quản lý</h5>
                                         <a href="#"><button class="mb-2 mr-2 btn btn-primary">Gửi Email thông báo</button></a>
                                         <a href="#"><button class="mb-2 mr-2 btn btn-success">Đã hoàn tất</button></a>
-                                        <a href="#"><button class="mb-2 mr-2 btn btn-danger">Huỷ đơn hàng</button>
+                                        <a href="#"><button class="mb-2 mr-2 btn btn-danger">Huỷ đơn hàng</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Thông tin đơn hàng</h5>
+                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">STT</th>
+                                                <th class="text-center">Mã SP</th>
+                                                <th class="text-center">Tên sản phẩm</th>
+                                                <th class="text-center">Đơn giá</th>
+                                                <th class="text-center">Số lượng</th>
+                                                <th class="text-center">Thành tiền</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+                                            
+                                                $stt='1';
+                                                $tongcong=0;
+                                                foreach ($getOrderDetail as $pro) {
+                                                    echo'
+                                                    <tr>
+                                                        <td class="text-center">'.$stt.'</td>
+                                                        <td class="text-center">BS0'.$pro['id'].'</td>
+                                                        <td>
+                                                            <div class="widget-content p-0">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left mr-3">
+                                                                        <div class="widget-content-left">
+                                                                            <img width="40" class="rounded-circle" src="../assets/uploads/'.$pro['image'].'" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-content-left flex2">
+                                                                        <div class="widget-heading">'.$pro['name'].'</div>
+                                                                        <div class="widget-subheading opacity-7">'.$pro['author'].'</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-heading text-center"><strong>'.number_format($pro['specialPrice']).' đ</strong></div>
+                                                            <div class="widget-subheading opacity-7 text-center"><del>'.number_format($pro['price']).' đ</del></div>
+                                                        </td>
+                                                        <td class="text-center" >
+                                                        '.$pro['qty'].'
+                                                        </td>
+                                                        <td class="text-center">
+                                                        '.number_format($pro['specialPrice']*$pro['qty']).' đ
+                                                        </td>
+                                                    </tr>
+                                                    ';
+                                                    $stt+=1;
+                                                    $tongcong+=$pro['specialPrice']*$pro['qty'];
+                                                }
+                                            ?>
+                                                
+                                            </tbody>
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center">Mã giảm giá</th>
+                                                <th class="text-center">- 0 đ</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center">Phí vận chuyển</th>
+                                                <th class="text-center">+ 15,000 đ</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center">Tổng cộng</th>
+                                                <th class="text-center"><?=number_format($tongcong+15000);?> đ</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@
         
         function getAllCatalog()
         {
-            $this->SetQuery("SELECT * from catalog");
+            $this->SetQuery("SELECT * from catalog order by id DESC");
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }
