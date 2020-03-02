@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 02, 2020 lúc 03:32 AM
+-- Thời gian đã tạo: Th3 02, 2020 lúc 07:43 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.2
 
@@ -85,7 +85,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `full_name`, `email`, `address`, `phone`, `created_at`, `status`) VALUES
-(35, 'Doan Dung', 'doanquocdung55@gmail.com', '992 Âu Cơ, Phường 14, Quận Tân Bình, 34D, Đường số 12, Phường 11, Quận Gò Vấp', '0398022720', '2020-02-23 13:01:11', 0);
+(35, 'Doan Dung', 'doanquocdung55@gmail.com', '992 Âu Cơ, Phường 14, Quận Tân Bình, 34D, Đường số 12, Phường 11, Quận Gò Vấp', '0398022720', '2020-02-23 13:01:11', 1),
+(42, 'LÊ VĂN TÈO', 'dungdq5520@gmail.com', '123 Nguyễn Văn Quá, Phường Đông Hưng Thuân, Quận 12', '0398022720', '2020-03-02 22:29:33', 2),
+(43, 'PHẠM HOÀNG SƠN', 'dungdqps08542@fpt.edu.vn', '123 Nguyễn Văn Quá, Phường Đông Hưng Thuân, Quận 12', '0354215478', '2020-03-02 22:47:13', 0);
 
 -- --------------------------------------------------------
 
@@ -108,7 +110,14 @@ INSERT INTO `orderdetail` (`id`, `customer_id`, `product_id`, `qty`) VALUES
 (27, 35, 4, 2),
 (28, 35, 3, 1),
 (29, 35, 1, 1),
-(30, 35, 2, 1);
+(30, 35, 2, 1),
+(31, 36, 2, 1),
+(32, 41, 2, 1),
+(33, 42, 3, 1),
+(34, 43, 2, 3),
+(35, 43, 1, 2),
+(36, 43, 4, 1),
+(37, 44, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -124,7 +133,7 @@ CREATE TABLE `product` (
   `price` double(10,0) NOT NULL,
   `specialPrice` float(10,0) NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Ảnh chính',
-  `images` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Ảnh phụ',
+  `images` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'Ảnh phụ',
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
   `tag` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `idCatalog` int(100) NOT NULL,
@@ -140,8 +149,9 @@ INSERT INTO `product` (`id`, `name`, `author`, `nxb`, `price`, `specialPrice`, `
 (2, 'Cảm Ơn Người Lớn (Bìa Mềm)', '', '', 500000, 480000, 'cam_on_nguoi_lon_bia_mem_1_2018_11_15_13_40_08.jpg', '', '', '', 5, 0),
 (3, 'Tôi Thấy Hoa Vàng Trên Cỏ Xanh (Bản In Mới - 2018)', '', '', 800000, 700000, 'image_180164_1_43_1_57_1_4_1_2_1_210_1_29_1_98_1_25_1_21_1_5_1_3_1_18_1_18_1_45_1_26_1_32_1_14_1_2199.jpg', '', '', '', 5, 1),
 (4, 'Trên Đường Băng (Tái Bản 2017)', 'Đoàn Quốc Dũng', 'Tuổi trẻ', 620000, 550000, 'tren_duong_bang_tai_ban_2017_1_2018_11_16_11_02_25.jpg', '', '', '', 5, 0),
-(5, 'Xe Tải Kim Loại - Công Trình Xây Dựng - LC05 - Mẫu 1', '', '', 120000, 100000, '8936121106937-mau1_2_.jpg', '', '', '', 9, 2),
-(6, 'Tomica No.89-5 Suzuki Carry (Box) \'16', '', '', 120000, 100000, 'image_187257.jpg', '', '', '', 9, 2);
+(7, 'Khi Bạn Đang Mơ Thì Người Khác Đang Nỗ Lực', 'Vĩ Nhân', 'NXB Văn Học', 95000, 78000, 'untitled-7_2_8.jpg', 'khi_ban_dang_mo_thi_nguoi_khac_dang_no_luc_10_2018_07_16_08_54_43.jpg', 'Khi Bạn Đang Mơ Thì Người Khác Đang Nỗ Lực\r\n\r\nNgười khác có thể mang lại cho bạn nhiều lắm là sân khấu, còn vai diễn là do bạn đảm nhiệm. Thế giới này không đợi bạn trưởng thành, cũng chẳng có ai trưởng thành thay bạn, bạn chỉ có thể tự vượt qua gian khổ, tự nỗ lực trưởng thành.\r\n\r\nThói quen \"chờ đợi\" sẽ ăn mòn sự tự tin, hi vọng và hứng khởi của bạn, bạn chỉ có thể tiếp tục chờ đợi mà thôi.\r\n\r\nKhông lãng phí một giây một phút nào để trưởng thành, thành công sẽ không còn xa nữa. Hãy làm cho mỗi ngày chúng ta sống trên đời này không đơn thuần là một ngày ta già đi, mà là một ngày ta đang trưởng thành hơn.\r\n\r\nMuốn có một cuộc đời rực rỡ không có gì hối tiếc, chúng ta buộc phải tự tạo ra giá trị và màu sắc vô hạn cho cuộc sống của mình trong thời gian hữu hạn.', '', 3, 0),
+(8, 'Tin Vào Chính Mình (Tái Bản 2016)', 'Louise L Hay', 'NXB Tổng hợp TP.HCM', 123000, 102000, 'tin_vao_chinh_minh_tai_ban_2016_1_2018_07_05_14_30_09.jpg', 'tin_vao_chinh_minh_tai_ban_2016_10_2018_07_05_14_30_09.jpg', 'Tên Nhà Cung Cấp: FIRST NEWS\r\nTác giả: Louise L Hay\r\nNXB: NXB Tổng hợp TP.HCM\r\nNăm XB: 01-2016\r\nTrọng lượng (gr): 300\r\nKích thước: 20.5 x 14.5\r\nSố trang: 160\r\nHình thức: Bìa Mềm', '', 3, 0),
+(9, 'Đam Mê - Bí Quyết Tạo Thành Công (Tái Bản 2019)', 'Stephen R Covey', 'FIRST NEWS', 130000, 120000, '_am_m_t_o_th_nh_c_ng.jpg', 'damme-biquyetthanhcong.jpg,khi_ban_dang_mo_thi_nguoi_khac_dang_no_luc_7_2018_07_16_08_54_43.jpg,tin_', 'Tác giả	Stephen R Covey\r\nNXB	NXB Tổng Hợp TPHCM\r\nNăm XB	2019\r\nTrọng lượng (gr)	220\r\nKích thước	13 x 20.5\r\nSố trang	216\r\nHình thức	Bìa Mềm', '', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -229,19 +239,19 @@ ALTER TABLE `catalog`
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
