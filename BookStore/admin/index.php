@@ -6,6 +6,7 @@
     include_once '../model/customer.php';
     include_once '../model/cartservice.php';
     require_once '../model/user.php';
+    require_once '../model/order.php';
 
     if (isset($_SESSION['idAdmin'])) {
         $idAmin=$_SESSION['idAdmin'];

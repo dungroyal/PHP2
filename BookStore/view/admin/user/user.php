@@ -43,7 +43,7 @@
                                                                 <div class="widget-content-wrapper">
                                                                     <div class="widget-content-left mr-3">
                                                                         <div class="widget-content-left">
-                                                                            <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                                            <img width="40" class="rounded-circle" src="../assets/uploads/admin-logo.png" alt="">
                                                                         </div>
                                                                     </div>
                                                                     <div class="widget-content-left flex2">
@@ -73,6 +73,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="app-wrapper-footer">
                     <div class="app-footer">
