@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 23, 2020 lúc 01:01 PM
+-- Thời gian đã tạo: Th3 02, 2020 lúc 03:32 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.3.14
+-- Phiên bản PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -127,20 +127,46 @@ CREATE TABLE `product` (
   `images` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Ảnh phụ',
   `mota` text COLLATE utf8_unicode_ci NOT NULL,
   `tag` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `idCatalog` int(100) NOT NULL
+  `idCatalog` int(100) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `author`, `nxb`, `price`, `specialPrice`, `image`, `images`, `mota`, `tag`, `idCatalog`) VALUES
-(1, 'Nhà Giả Kim', '', '', 200000, 180000, '8935235213746.jpg', '', '', '', 5),
-(2, 'Cảm Ơn Người Lớn (Bìa Mềm)', '', '', 500000, 480000, 'cam_on_nguoi_lon_bia_mem_1_2018_11_15_13_40_08.jpg', '', '', '', 5),
-(3, 'Tôi Thấy Hoa Vàng Trên Cỏ Xanh (Bản In Mới - 2018)', '', '', 800000, 700000, 'image_180164_1_43_1_57_1_4_1_2_1_210_1_29_1_98_1_25_1_21_1_5_1_3_1_18_1_18_1_45_1_26_1_32_1_14_1_2199.jpg', '', '', '', 5),
-(4, 'Trên Đường Băng (Tái Bản 2017)', 'Đoàn Quốc Dũng', 'Tuổi trẻ', 620000, 550000, 'tren_duong_bang_tai_ban_2017_1_2018_11_16_11_02_25.jpg', '', '', '', 5),
-(5, 'Xe Tải Kim Loại - Công Trình Xây Dựng - LC05 - Mẫu 1', '', '', 120000, 100000, '8936121106937-mau1_2_.jpg', '', '', '', 9),
-(6, 'Tomica No.89-5 Suzuki Carry (Box) \'16', '', '', 120000, 100000, 'image_187257.jpg', '', '', '', 9);
+INSERT INTO `product` (`id`, `name`, `author`, `nxb`, `price`, `specialPrice`, `image`, `images`, `mota`, `tag`, `idCatalog`, `status`) VALUES
+(1, 'Nhà Giả Kim', '', '', 200000, 180000, '8935235213746.jpg', '', '', '', 5, 0),
+(2, 'Cảm Ơn Người Lớn (Bìa Mềm)', '', '', 500000, 480000, 'cam_on_nguoi_lon_bia_mem_1_2018_11_15_13_40_08.jpg', '', '', '', 5, 0),
+(3, 'Tôi Thấy Hoa Vàng Trên Cỏ Xanh (Bản In Mới - 2018)', '', '', 800000, 700000, 'image_180164_1_43_1_57_1_4_1_2_1_210_1_29_1_98_1_25_1_21_1_5_1_3_1_18_1_18_1_45_1_26_1_32_1_14_1_2199.jpg', '', '', '', 5, 1),
+(4, 'Trên Đường Băng (Tái Bản 2017)', 'Đoàn Quốc Dũng', 'Tuổi trẻ', 620000, 550000, 'tren_duong_bang_tai_ban_2017_1_2018_11_16_11_02_25.jpg', '', '', '', 5, 0),
+(5, 'Xe Tải Kim Loại - Công Trình Xây Dựng - LC05 - Mẫu 1', '', '', 120000, 100000, '8936121106937-mau1_2_.jpg', '', '', '', 9, 2),
+(6, 'Tomica No.89-5 Suzuki Carry (Box) \'16', '', '', 120000, 100000, 'image_187257.jpg', '', '', '', 9, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp(),
+  `level` int(2) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `phone`, `address`, `created`, `level`) VALUES
+(1, 'ĐOÀN QUỐC DŨNG', 'doanquocdung55@gmail.com', 'admin', '0398022720', '992 Âu Cơ, Phường 14, Quận Tân Bình', '2020-03-01 02:55:33', 1),
+(2, 'Trần Công Diện', 'trancongdien20@gmail.com', 'admin', '0324585457', '34D Đường số 12, Phường 14, Quận Tân Bình', '0000-00-00 00:00:00', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -178,6 +204,12 @@ ALTER TABLE `product`
   ADD KEY `fk_product_catalog` (`idCatalog`);
 
 --
+-- Chỉ mục cho bảng `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -210,6 +242,12 @@ ALTER TABLE `orderdetail`
 --
 ALTER TABLE `product`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
