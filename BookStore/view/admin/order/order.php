@@ -15,6 +15,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
@@ -77,7 +78,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="main-card mb-3 card">
+                            <div class="main-card mb-3 card ">
                                 <div class="card-header">ĐƠN HÀNG ĐÃ VÀ ĐANG XỬ LÝ
                                 </div>
                                 <div class="table-responsive">
@@ -87,10 +88,10 @@
                                                 <th class="text-center">Mã ĐH</th>
                                                 <th>Name</th>
                                                 <th class="text-center">Địa chỉ</th>
-                                                <th class="text-center">Số điện thoại</th>
+                                                <th class="text-center">Số Phone</th>
                                                 <th class="text-center">Thời gian</th>
                                                 <th class="text-center">Status</th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;Actions&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -110,7 +111,7 @@
                                                     }
                                                 echo  '
                                                 <tr>
-                                                    <td class="text-center text-muted">ODBS0'.$order['id'].'</td>
+                                                    <td class="text-center text-muted">BS0'.$order['id'].'</td>
                                                     <td>
                                                         <div class="widget-content p-0">
                                                             <div class="widget-content-wrapper">
@@ -160,3 +161,6 @@
                     </div>
                 </div>
             </div>
+
+
+            

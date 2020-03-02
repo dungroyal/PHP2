@@ -72,7 +72,8 @@
                                                             '.$status.'
                                                         </td>
                                                         <td class="text-center">
-                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                            <a href="#"><div class="badge badge-primary">Sửa</div></a>
+                                                            <a href="#"><div class="badge badge-danger">Xoá</div></a>
                                                         </td>
                                                     </tr>
                                                     ';

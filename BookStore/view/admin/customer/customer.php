@@ -23,45 +23,44 @@
                                 <div class="table-responsive">
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                                         <thead>
-                                            <tr>
-                                                <th class="text-center">#</th>
+                                             <tr>
+                                                <th class="text-center">Mã ĐH</th>
                                                 <th>Name</th>
-                                                <th class="text-center">City</th>
-                                                <th class="text-center">Status</th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">Địa chỉ</th>
+                                                <th class="text-center">Số điện thoại</th>
+                                                <th class="text-center">Ngày tạo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-center text-muted">#345</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
+                                        <?php
+                                            foreach ($addCustomer as $cus) {
+                                                echo  '
+                                                <tr>
+                                                    <td class="text-center text-muted">CM0'.$cus['id'].'</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                                        <img width="40" class="rounded-circle" src="../assets/uploads/User_iconpng.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">'.$cus['full_name'].'</div>
+                                                                    <div class="widget-subheading opacity-7">Khách hàng</div>
                                                                 </div>
                                                             </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">John Doe</div>
-                                                                <div class="widget-subheading opacity-7">Web Developer</div>
-                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Madrid</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-warning">Pending</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                    <td class="text-center">'.$cus['address'].'</td>
+                                                    <td class="text-center">'.$cus['phone'].'</td>
+                                                    <td class="text-center">'.$cus['created_at'].'</td>
+                                                </tr>
+                                                ';
+                                            }
+                                        ?>         
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="d-block text-center card-footer">
-                                    <a href="#" class="btn-wide btn btn-success">Xem chi tiết</a>
                                 </div>
                             </div>
                         </div>

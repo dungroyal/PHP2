@@ -6,6 +6,14 @@
         {
             parent::__construct();
         }
+
+        function AllCustomer()
+        {
+            $this->SetQuery("SELECT * FROM `customer` order by id DESC");
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }
+
         function insert($name,$email,$address,$phone,$created,$status)
         {
             $query = "INSERT INTO customer(full_name, email, address, phone, created_at, status) 

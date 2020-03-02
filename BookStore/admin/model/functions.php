@@ -1,21 +1,20 @@
 <?php
 function sendMail($title, $content, $nTo, $mTo,$diachicc=''){
-	$nFrom = 'Cửa hàng Lab7';
-	$mFrom = 'doanquocdung55@gmail.com';	//dia chi email cua ban 
-	$mPass = 'doanquocdung';		//mat khau email cua ban
+	$nFrom = 'BookStore | Sách cho mọi người!';
+	$mFrom = 'doanquocdung55@gmail.com';
+	$mPass = 'doanquocdung';
 	$mail             = new PHPMailer();
 	$body             = $content;
 	$mail->IsSMTP(); 
 	$mail->CharSet 	= "utf-8";
-	$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
-	$mail->SMTPAuth   = true;                  	// enable SMTP authentication
-	$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+	$mail->SMTPDebug  = 0;
+	$mail->SMTPAuth   = true;
+	$mail->SMTPSecure = "ssl";
 	$mail->Host       = "smtp.gmail.com";      	
 	$mail->Port       = 465;
-	$mail->Username   = $mFrom;  // GMAIL username
-	$mail->Password   = $mPass;           	 // GMAIL password
+	$mail->Username   = $mFrom;
+	$mail->Password   = $mPass;
 	$mail->SetFrom($mFrom, $nFrom);
-	//chuyen chuoi thanh mang
 	$ccmail = explode(',', $diachicc);
 	$ccmail = array_filter($ccmail);
 	if(!empty($ccmail)){
@@ -27,7 +26,7 @@ function sendMail($title, $content, $nTo, $mTo,$diachicc=''){
 	$mail->MsgHTML($body);
 	$address = $mTo;
 	$mail->AddAddress($address, $nTo);
-	$mail->AddReplyTo('info@choviet.xyz', 'choviet.xyz');
+	$mail->AddReplyTo('info@BookStore.xyz', 'BookStore.xyz');
 	if(!$mail->Send()) {
 		return 0;
 	} else {
@@ -37,21 +36,20 @@ function sendMail($title, $content, $nTo, $mTo,$diachicc=''){
 
 function sendMailAttachment($title, $content, $nTo, $mTo,$diachicc='',$file,$filename){
 	$nFrom = 'Cửa hàng Lab7';
-	$mFrom = 'doanquocdung55@gmail.com';	//dia chi email cua ban 
-	$mPass = 'doanquocdung';		//mat khau email cua ban
+	$mFrom = 'doanquocdung55@gmail.com';
+	$mPass = 'doanquocdung';		
 	$mail             = new PHPMailer();
 	$body             = $content;
 	$mail->IsSMTP(); 
 	$mail->CharSet 	= "utf-8";
-	$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
-	$mail->SMTPAuth   = true;                  	// enable SMTP authentication
-	$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+	$mail->SMTPDebug  = 0;  
+	$mail->SMTPAuth   = true;         
+	$mail->SMTPSecure = "ssl";            
 	$mail->Host       = "smtp.gmail.com";      	
 	$mail->Port       = 465;
-	$mail->Username   = $mFrom;  // GMAIL username
-	$mail->Password   = $mPass;           	 // GMAIL password
+	$mail->Username   = $mFrom; 
+	$mail->Password   = $mPass;           	
 	$mail->SetFrom($mFrom, $nFrom);
-	//chuyen chuoi thanh mang
 	$ccmail = explode(',', $diachicc);
 	$ccmail = array_filter($ccmail);
 	if(!empty($ccmail)){
@@ -63,7 +61,7 @@ function sendMailAttachment($title, $content, $nTo, $mTo,$diachicc='',$file,$fil
 	$mail->MsgHTML($body);
 	$address = $mTo;
 	$mail->AddAddress($address, $nTo);
-	$mail->AddReplyTo('info@freetuts.xyz', 'Choviet.xyz');
+	$mail->AddReplyTo('info@BookStore.xyz', 'BookStore.xyz');
 	$mail->AddAttachment($file,$filename);
 	if(!$mail->Send()) {
 		return 0;

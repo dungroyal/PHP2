@@ -12,6 +12,20 @@
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }   
+
+        function getProductHome()
+        {
+            $this->SetQuery("SELECT * from product ORDER BY  id DESC limit 0,3 ");
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }  
+
+        function addProduct($name,$author,$nxb,$price,$specialPrice,$image,$images,$mota,$idCatalog,$status){
+            $query="INSERT INTO `product`( `name`, `author`, `nxb`, `price`, `specialPrice`, `image`, `images`, `mota`, `idCatalog`, `status`) 
+            VALUES ('".$name."','".$author."','".$nxb."','".$price."','".$specialPrice."','".$image."','".$images."','".$mota."','".$idCatalog."','".$status."')";
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
+        }
         
         function getProduct_by_idCat($id)
         {

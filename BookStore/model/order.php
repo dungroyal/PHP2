@@ -12,6 +12,7 @@
             $this->result=$this->ThucHienTruyVan();
             return $this->result;
         }
+        
 
         function getAllOrder()
         {

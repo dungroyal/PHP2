@@ -14,7 +14,6 @@
                                 array_splice($_SESSION['cart_items'],$i-1,1,array(array("idProduct"=>$idProduct,"quantity"=>$items['quantity']+1)));
                                 $found=true;
                             }
-                            
                         }
                     }
                 if ($found==false) {

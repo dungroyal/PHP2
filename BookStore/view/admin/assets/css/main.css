@@ -11844,7 +11844,7 @@ button,
 }
 
 .bg-midnight-bloom {
-    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%) !important
+    background-image: linear-gradient(-20deg, #236609 0%, #ff143f 100%) !important;
 }
 
 .bg-night-sky {
@@ -15689,7 +15689,7 @@ legend {
 }
 
 .widget-content .widget-content-left .widget-heading {
-    opacity: .8;
+    opacity: 1;
     font-weight: bold
 }
 
@@ -24609,4 +24609,8 @@ a.fc-more:hover {
     height: 350px;
     margin-bottom: 30px;
     background-size: 100%
+}
+
+a {
+    text-decoration: none;
 }

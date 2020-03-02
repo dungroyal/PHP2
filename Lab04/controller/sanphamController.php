@@ -18,7 +18,7 @@
 
                 if ($_FILES['image1']['name']!="") {         
                     $image1= basename($_FILES['image1']['name']);
-                    $target_file ="assets/images/". $image1;
+                    $target_file ="./../assets/uploads/". $image1;
                     move_uploaded_file($_FILES['image1']['tmp_name'], $target_file);
                 }
 
@@ -26,7 +26,7 @@
                     $listImages="";
                     foreach ($_FILES['listImages']['name'] as $key=>$valuse) {
                         $image2=basename($_FILES['listImages']['name'][$key]);
-                        $target_file ="assets/images/".$image2;
+                        $target_file ="./../assets/uploads/".$image2;
                         move_uploaded_file($_FILES['listImages']['tmp_name'][$key], $target_file);
                         $listImages.=",".$image2;
                     }
