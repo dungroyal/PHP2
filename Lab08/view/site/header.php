@@ -14,9 +14,9 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php?ctrller=book">Đặt vé</a>
         </li>
-       
+
         <li class="nav-item">
-          <a class="nav-link" href="index.php?ctrller=cart">Your cart</a>
+          <a class="nav-link" href="index.php?ctrller=curency">Curence</a>
         </li>
       </ul>
     </nav>
