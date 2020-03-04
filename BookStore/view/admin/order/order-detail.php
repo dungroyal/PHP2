@@ -17,7 +17,7 @@
                         </div>
                         <?php
                             if ($getCustomer['status']==0) {
-                                echo "";
+                                echo '<div class="alert alert-info fade show" role="alert">Hãy gửi Mail thông báo cho <strong>'.$getCustomer['full_name'].'</strong>, và chuẩn bị đơn hàng để gửi.</div>';
                             }elseif ($getCustomer['status']==1) {
                                 echo '<div class="alert alert-info fade show" role="alert">Đã gửi mail thông báo cho <strong>'.$getCustomer['full_name'].'</strong></div>';
                             }elseif ($getCustomer['status']==2) {
@@ -56,13 +56,19 @@
                                     <div class="card-body"><h5 class="card-title">Quản lý</h5>
                                     <?php
                                         if ($getCustomer['status']==0) {
-                                            echo '<a href="index.php?ctrller=order&act=sendmail&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-primary">Gửi Email thông báo</button></a>';
+                                            echo '<a href="index.php?ctrller=order&act=sendmail&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-primary">Gửi Email thông báo</button></a>
+                                                    <a href="index.php?ctrller=order&act=order-success&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-success">Đã thành công</button></a>
+                                                    <a href="index.php?ctrller=order&act=order-cancel&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-danger">Huỷ đơn hàng</button></a>';
                                         }elseif ($getCustomer['status']==1) {
-                                            echo '<a href="index.php?ctrller=order&act=sendmail&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-primary">Gửi lại Email thông báo</button></a>';
+                                            echo '<a href="index.php?ctrller=order&act=sendmail&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-primary">Gửi lại Email thông báo</button></a>
+                                                    <a href="index.php?ctrller=order&act=order-success&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-success">Đã thành công</button></a>
+                                                    <a href="index.php?ctrller=order&act=order-cancel&idCustomer='.$getCustomer['id'].'"><button class="mb-2 mr-2 btn btn-danger">Huỷ đơn hàng</button></a>';
+                                        }elseif ($getCustomer['status']==2) {
+                                            echo '<a><button class="mb-2 mr-2 btn btn-success">Đơn hàng đã hoàn thành</button></a>';
+                                        }elseif ($getCustomer['status']==3) {
+                                            echo '<a><button class="mb-2 mr-2 btn btn-danger">Đã huỷ đơn hàng</button></a>';
                                         }
-                                    ?>   
-                                        <a href="index.php?ctrller=order&act=sendmail&idCustomer=<?=$getCustomer['id'];?>"><button class="mb-2 mr-2 btn btn-success">Đã hoàn tất</button></a>
-                                        <a href="index.php?ctrller=order&act=sendmail&idCustomer=<?=$getCustomer['id'];?>"><button class="mb-2 mr-2 btn btn-danger">Huỷ đơn hàng</button></a>
+                                    ?>
                                     </div>
                                 </div>
                             </div>

@@ -25,7 +25,7 @@
                                         <div class="widget-subheading">Đơn hàng mới chưa sử lý</div>
                                     </div>
                                     <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>1</span></div>
+                                        <div class="widget-numbers text-white"><span><span><?php echo COUNT($countNewOrder); ?></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -36,11 +36,11 @@
                             <div class="card mb-3 widget-content bg-arielle-smile">
                                 <div class="widget-content-wrapper text-white">
                                     <div class="widget-content-left">
-                                        <div class="widget-heading">Đơn hàng</div>
+                                        <div class="widget-heading">Đơn hàng thành công</div>
                                         <div class="widget-subheading">Tổng số lượng đơn hàng thành công</div>
                                     </div>
                                     <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>35</span></div>
+                                        <div class="widget-numbers text-white"><span><?php echo COUNT($countOrder); ?></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                         <div class="widget-subheading">People Interested</div>
                                     </div>
                                     <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>15</span></div>
+                                        <div class="widget-numbers text-white"><span><?php echo COUNT($countCustomer); ?></span></div>
                                     </div>
                                 </div>
                             </div>
