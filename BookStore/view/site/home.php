@@ -120,16 +120,16 @@
         <div class="container">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
-                    <h2>Deal Of The Week</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet, consectetur adipisicing elit </p>
+                    <h2>SÁCH HAY GIÁ RẺ</h2>
+                    <p>Sở hữa ngay cho mình một cuốc sách hay nào!</p>
                     <div class="product-price">
-                        $35.00
-                        <span>/ HanBag</span>
+                        120,000 Đ
+                        <span>/ Quyển</span>
                     </div>
                 </div>
                 <div class="countdown-timer" id="countdown">
                     <div class="cd-item">
-                        <span>56</span>
+                        <span>1</span>
                         <p>Days</p>
                     </div>
                     <div class="cd-item">
@@ -145,7 +145,7 @@
                         <p>Secs</p>
                     </div>
                 </div>
-                <a href="#" class="primary-btn">Shop Now</a>
+                <a href="index.php?ctrller=product" class="primary-btn">Xem thêm</a>
             </div>
         </div>
     </section>
@@ -204,54 +204,13 @@
     </section>
     <!-- Man Banner Section End -->
 
-    <!-- Instagram Section Begin -->
-    <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-1.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-2.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-3.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-4.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-5.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="assets/uploads/insta-6.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-    </div>
-    <!-- Instagram Section End -->
-
     <!-- Latest Blog Section Begin -->
     <section class="latest-blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>From The Blog</h2>
+                        <h2>Những Mẫu chuyện hay</h2>
                     </div>
                 </div>
             </div>

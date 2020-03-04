@@ -45,5 +45,35 @@
             return $this->result;
         }
 
+        function deleteCatalog($idCatalog){
+            $query="DELETE FROM `catalog` Where id=".$idCatalog;
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
+        }
+
+        function addCatalog($name,$image){
+            $query="INSERT INTO `catalog`( `name`, `image`) 
+            VALUES ('".$name."','".$image."')";
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
+        }
+
+        function getCatalogOne($id)
+        {
+            $this->SetQuery("SELECT * from catalog where id=".$id);
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }
+
+        function updateCatalog($name,$idCatalog){
+            $query="UPDATE `catalog` SET `name`='".$name."' WHERE id=".$idCatalog;
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
+        }
+
+        
     }
+
+   
+
 ?>

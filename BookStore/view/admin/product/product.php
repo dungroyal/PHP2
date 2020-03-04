@@ -72,8 +72,8 @@
                                                             '.$status.'
                                                         </td>
                                                         <td class="text-center">
-                                                            <a href="#"><div class="badge badge-primary">Sửa</div></a>
-                                                            <a href="#"><div class="badge badge-danger">Xoá</div></a>
+                                                            <a href="index.php?ctrller=product&act=edit&idProduct='.$pro['id'].'"><div class="badge badge-primary">Sửa</div></a>
+                                                            <a href="index.php?ctrller=product&act=delete&idProduct='.$pro['id'].'"><div class="badge badge-danger">Xoá</div></a>
                                                         </td>
                                                     </tr>
                                                     ';

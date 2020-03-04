@@ -8,7 +8,7 @@
         switch($action){
             case "product-detail":
                 $p=new PRODUCT();
-                $allProduct=$p->getAllProduct();
+                $allProduct=$p->getProductHome();
 
                 if (isset($_GET['idProduct'])) {
                     $idProduct=$_GET['idProduct'];

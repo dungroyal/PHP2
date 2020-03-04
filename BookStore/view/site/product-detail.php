@@ -23,13 +23,13 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Danh mục</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
+                            <li><a href="#">Kỹ năng sống</a></li>
+                            <li><a href="#">Ngôn tình</a></li>
+                            <li><a href="#">Sách trữ tình</a></li>
                         </ul>
                     </div>
                     <div class="filter-widget">
-                        <h4 class="fw-title">Thương hiệu</h4>
+                        <h4 class="fw-title">Nhà xuất bản</h4>
                         <div class="fw-brand-check">
                             <div class="bc-item">
                                 <label for="bc-calvin">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="33" data-max="98">
+                                data-min="100" data-max="900">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
@@ -80,18 +80,6 @@
                         <a href="#" class="filter-btn">Lọc</a>
                     </div>
                     
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Tags</h4>
-                        <div class="fw-tags">
-                            <a href="#">Towel</a>
-                            <a href="#">Shoes</a>
-                            <a href="#">Coat</a>
-                            <a href="#">Dresses</a>
-                            <a href="#">Trousers</a>
-                            <a href="#">Men's hats</a>
-                            <a href="#">Backpack</a>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
@@ -102,16 +90,21 @@
                                     <i class="fa fa-search-plus"></i>
                                 </div>
                             </div>
+                            
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track ps-slider owl-carousel">
-                                    <div class="pt active" data-imgbigurl="assets/uploads/<?=$proById['image'];?>"><img
-                                            src="assets/uploads/<?=$proById['image'];?>" alt=""></div>
-                                    <div class="pt" data-imgbigurl="assets/uploads/product-2.jpg"><img
-                                            src="assets/uploads/product-2.jpg" alt=""></div>
-                                    <div class="pt" data-imgbigurl="assets/uploads/product-3.jpg"><img
-                                            src="assets/uploads/product-3.jpg" alt=""></div>
-                                    <div class="pt" data-imgbigurl="assets/uploads/product-3.jpg"><img
-                                            src="assets/uploads/product-3.jpg" alt=""></div>
+                                    <div class="pt active" data-imgbigurl="assets/uploads/<?=$proById['image'];?>"><img src="assets/uploads/<?=$proById['image'];?>" alt=""></div>
+                                    <?php
+                                        $string= $proById['images'];
+                                        $ArrayImages=explode(",", $string);
+
+                                        foreach ($ArrayImages as $image) {
+                                            echo'
+                                            <div class="pt active" data-imgbigurl="assets/uploads/'.$image.'"><img
+                                            src="assets/uploads/'.$image.'" alt=""></div>
+                                            ';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -131,8 +124,7 @@
                                     <span>(5)</span>
                                 </div>
                                 <div class="pd-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
-                                        sit amet, consectetur adipisicing elit, sed do mod tempor</p>
+                                    <p><?=$proById['mota'];?></p>
                                     <h4><?=number_format($proById['specialPrice']);?> đ <span><?=number_format($proById['price']);?> đ</span></h4>
                                 </div>
                                 <div class="quantity">
@@ -142,11 +134,12 @@
                                     <a href="?ctrller=cart&act=addToCart&idProduct=<?=$proById['id'];?>" class="primary-btn pd-cart">Thêm vào giỏ</a>
                                 </div>
                                 <ul class="pd-tags">
-                                    <li><span>Danh mục</span>: More Accessories, Wallets & Cases</li>
-                                    <li><span>Thẻ</span>: Clothing, T-shirt, Woman</li>
+                                    <li><span>Tác giả</span>: <?=$proById['author'];?></li>
+                                    <li><span>Nhà xuất bản</span>: <?=$proById['nxb'];?></li>
+                                    <li><span>Danh mục</span>: <?=$proById['idCatalog'];?></li>
                                 </ul>
                                 <div class="pd-share">
-                                    <div class="p-code">Mã sản phẩm : 00012</div>
+                                    <div class="p-code">Mã sản phẩm : BS0<?=$proById['author'];?></div>
                                     <div class="pd-social">
                                         <a href="#"><i class="ti-facebook"></i></a>
                                         <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -176,19 +169,11 @@
                                     <div class="product-content">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                                <h5>Introduction</h5>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
-                                                <h5>Features</h5>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+                                                <h5><?=$proById['name'];?></h5>
+                                                <p><?=$proById['mota'];?></p>
                                             </div>
                                             <div class="col-lg-5">
-                                                <img src="assets/uploads/tab-desc.jpg" alt="">
+                                                <img src="assets/uploads/<?=$proById['image'];?>" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -210,43 +195,15 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Price</td>
+                                                <td class="p-catagory">Giá gốc</td>
                                                 <td>
-                                                    <div class="p-price">$495.00</div>
+                                                    <div class="p-price"><del><?=number_format($proById['price']);?> đ</del></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Add To Cart</td>
+                                                <td class="p-catagory">Giá khuyến mãi</td>
                                                 <td>
-                                                    <div class="cart-add">+ add to cart</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Availability</td>
-                                                <td>
-                                                    <div class="p-stock">22 in stock</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Weight</td>
-                                                <td>
-                                                    <div class="p-weight">1,3kg</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Size</td>
-                                                <td>
-                                                    <div class="p-size">Xxl</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Color</td>
-                                                <td><span class="cs-color"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Sku</td>
-                                                <td>
-                                                    <div class="p-code">00012</div>
+                                                    <div class="p-price"><?=number_format($proById['specialPrice']);?> đ</div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -352,6 +309,8 @@
                                 <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                             </ul>
                         </div>
+
+                        
                         <div class="pi-text">
                             <div class="catagory-name">Coat</div>
                             <a href="#">

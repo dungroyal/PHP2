@@ -14,7 +14,7 @@
                                 </div>
                             </div>
                             <div class="page-title-actions">
-                                <a href="#" class="btn-wide btn btn-info text-right"><i class="fa fa-fw" aria-hidden="true"></i>    THÊM DANH MỤC MỚI</a>
+                                <a href="index.php?ctrller=catalog&act=add" class="btn-wide btn btn-info text-right"><i class="fa fa-fw" aria-hidden="true"></i>    THÊM DANH MỤC MỚI</a>
                             </div>
                         </div>
                     </div>
@@ -54,8 +54,8 @@
                                                             </div>
                                                         </td>
                                                         <td class="text-center">
-                                                        <a href="#"><div class="badge badge-primary">Sửa</div></a>
-                                                        <a href="#"><div class="badge badge-danger">Xoá</div></a>
+                                                        <a href="index.php?ctrller=catalog&act=edit&idCatalog='.$cat['id'].'"><div class="badge badge-primary">Sửa</div></a>
+                                                        <a href="index.php?ctrller=catalog&act=delete&idCatalog='.$cat['id'].'"><div class="badge badge-danger">Xoá</div></a>
                                                         </td>
                                                     </tr>
                                                     ';
