@@ -8,7 +8,7 @@
                                         </i>
                                 </div>
                                 <div>Hi
-                                    <Strong>ĐOÀN QUỐC DŨNG</Strong>
+                                    <Strong>CÒN THIẾU SREACH, REGULER, Đổi MK</Strong>
                                     <div class="page-title-subheading">Sau đây là tổng quan về Website BookStore của bạn.
                                     </div>
                                 </div>
