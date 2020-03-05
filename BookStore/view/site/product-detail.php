@@ -182,7 +182,7 @@
                                     <div class="specification-table">
                                         <table>
                                             <tr>
-                                                <td class="p-catagory">Customer Rating</td>
+                                                <td class="p-catagory">Customer  Rating</td>
                                                 <td>
                                                     <div class="pd-rating">
                                                         <i class="fa fa-star"></i>
