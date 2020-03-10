@@ -63,5 +63,12 @@
             $this->SetQuery($query);
             $this->result=$this->ThucHienLenh();
         }
+
+        function searchProduct($keyword)
+        {
+            $this->SetQuery("SELECT * from product where name LIKE '%".$keyword."%' or author LIKE '%".$keyword."%' ");
+            $this->result=$this->ThucHienTruyVan();
+            return $this->result;
+        }
     }
 ?>

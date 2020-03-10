@@ -73,10 +73,16 @@
                     </div>
                     <div class="col-lg-7 col-md-7" style="padding-top: 20px;">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">Tìm kiếm sách</button>
                             <div class="input-group">
-                                <input type="text" placeholder="Muốn tìm giề?">
-                                <button type="button"><i class="ti-search"></i></button>
+                                <form action="index.php?ctrller=product&act=search" method="post" style="width: 100%;" autocomplete="off" >
+                                    <input type="text" name="keyword" placeholder="Muốn tìm gì?" id="colors" required>
+                                    <!-- <datalist id="colors" autocomplete="off">
+                                        <option value="Red">
+                                        <option value="Green">
+                                        <option value="Yellow">
+                                    </datalist> -->
+                                    <button type="submit" name="search"><i class="ti-search"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>

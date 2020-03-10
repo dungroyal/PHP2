@@ -21,51 +21,23 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Danh mục</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
+                        <li><a href="#">CATALOG</a></li>
+                            <?php
+                                foreach ($listCata as $cata) {
+                                    echo '
+                                        <li><a href="index.php?ctrller=product&idCatalog='.$cata['id'].'">'.$cata['name'].'</a></li>
+                                    ';
+                                }                            
+                            ?>
                         </ul>
                     </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Thương hiệu</h4>
-                        <div class="fw-brand-check">
-                            <div class="bc-item">
-                                <label for="bc-calvin">
-                                    Calvin Klein
-                                    <input type="checkbox" id="bc-calvin">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-diesel">
-                                    Diesel
-                                    <input type="checkbox" id="bc-diesel">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-polo">
-                                    Polo
-                                    <input type="checkbox" id="bc-polo">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="bc-item">
-                                <label for="bc-tommy">
-                                    Tommy Hilfiger
-                                    <input type="checkbox" id="bc-tommy">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter-widget">
+                    <!-- <div class="filter-widget">
                         <h4 class="fw-title">Giá</h4>
                         <div class="filter-range-wrap">
                             <div class="range-slider">
                                 <div class="price-input">
-                                    <input type="text" id="minamount">
-                                    <input type="text" id="maxamount">
+                                    <input type="text" name="price1" id="minamount">
+                                    <input type="text" name="price2" id="maxamount">
                                 </div>
                             </div>
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="33" data-max="98">
@@ -75,22 +47,11 @@
                             </div>
                         </div>
                         <a href="#" class="filter-btn">Lọc sản phẩm</a>
-                    </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Tags</h4>
-                        <div class="fw-tags">
-                            <a href="#">Towel</a>
-                            <a href="#">Shoes</a>
-                            <a href="#">Coat</a>
-                            <a href="#">Dresses</a>
-                            <a href="#">Trousers</a>
-                            <a href="#">Men's hats</a>
-                            <a href="#">Backpack</a>
-                        </div>
-                    </div>
+                    </div> -->
+                    
                 </div>
                 <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="product-show-option">
+                    <!-- <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
                                 <div class="select-option">
@@ -106,13 +67,15 @@
                                 <p>Show 01- 09 Of 36 Product</p>
                             </div>
                         </div>
-                    </div>
-
-
+                    </div> -->
+                    
+                    <?php
+                        if (isset($resultSearch)) echo $resultSearch;
+                    ?>
 
                     <div class="product-list">
                         <div class="row">
-
+                        
                         <?php
                             if (isset($_GET['idCatalog'])) {
                                 foreach ($productByIdcat as $pro) {
@@ -122,13 +85,8 @@
                                             <div class="pi-pic">
                                                 <img src="assets/uploads/'.$pro['image'].'" alt="">
                                                 <div class="sale pp-sale">Sale</div>
-                                                <div class="icon">
-                                                    <i class="icon_heart_alt"></i>
-                                                </div>
                                                 <ul>
-                                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view"><a href="?ctrller=cart&act=addToCart&idProduct='.$pro['id'].'">Thêm vào giỏ hàng</a></li>
-                                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                                    <li class="quick-view w-icon active" ><a href="?ctrller=cart&act=addToCart&idProduct='.$pro['id'].'"><i class="icon_bag_alt"></i>  Thêm vào giỏ hàng</a></li>
                                                 </ul>
                                             </div>
                                             <div class="pi-text">
@@ -153,14 +111,9 @@
                                             <div class="pi-pic">
                                                 <img src="assets/uploads/'.$pro['image'].'" alt="">
                                                 <div class="sale pp-sale">Sale</div>
-                                                <div class="icon">
-                                                    <i class="icon_heart_alt"></i>
-                                                </div>
                                                 <ul>
-                                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                                    <li class="quick-view"><a href="?ctrller=cart&act=addToCart&idProduct='.$pro['id'].'">Thêm vào giỏ hàng</a></li>
-                                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                                </ul>
+                                                    <li class="quick-view w-icon active" ><a href="?ctrller=cart&act=addToCart&idProduct='.$pro['id'].'"><i class="icon_bag_alt"></i>  Thêm vào giỏ hàng</a></li>
+                                            </ul>
                                             </div>
                                             <div class="pi-text">
                                                 <div class="catagory-name">Towel</div>
@@ -168,8 +121,8 @@
                                                     <h5>'.$pro['name'].'e</h5>
                                                 </a>
                                                 <div class="product-price">
-                                                '.$pro['specialPrice'].' đ
-                                                    <span>'.$pro['price'].' đ</span>
+                                                '.number_format($pro['specialPrice']).' đ
+                                                    <span>'.number_format($pro['price']).' đ</span>
                                                 </div>
                                             </div>
                                         </div>
