@@ -24,11 +24,11 @@
                         <form action="index.php?ctrller=home&act=login" method="post">
                             <div class="group-input">
                                 <label for="username">Tên đăng nhập hoặc địa chỉ Email *</label>
-                                <input type="text" id="username">
+                                <input type="email" name="email" id="username">
                             </div>
                             <div class="group-input">
                                 <label for="pass">Mật khẩu *</label>
-                                <input type="text" id="pass">
+                                <input type="password" name="pass" id="pass">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
@@ -41,6 +41,9 @@
                                 </div>
                             </div>
                             <input type="submit" value="Đăng nhập" name="login_user" class="site-btn login-btn">
+                            <br>
+                            <br>
+                                <h5><center><strong><?php if (isset($error_login)) echo $error_login ?></strong></center></h5>
                         </form>
                         <div class="switch-login">
                             <a href="?ctrller=home&act=register" class="or-login">Tạo tài khoản</a>

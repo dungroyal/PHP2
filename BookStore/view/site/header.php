@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -23,7 +24,6 @@
     <link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
-
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -43,14 +43,18 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="?ctrller=home&act=login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="assets/uploads/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">VN</option>
-                            <option value='yu' data-image="assets/uploads/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">EN</option>
-                        </select>
+                        <li class="dropdown"  style="list-style: none;">
+                            <div href="#" class="dropdown-toggle" data-toggle="dropdown">  &nbsp; &nbsp; &nbsp;<i class="fa fa-user"></i> Tài khoản</div>
+                            <ul class="dropdown-menu">
+                                <a href="?ctrller?home&act=login">
+                                    <li>Đăng nhập</li>
+                                </a>
+                                <a href="?ctrller=home&act=register">
+                                    <li>Đăng ký</li>
+                                </a>
+                            </ul>
+                        </li>
                     </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
@@ -74,7 +78,8 @@
                     <div class="col-lg-7 col-md-7" style="padding-top: 20px;">
                         <div class="advanced-search">
                             <div class="input-group">
-                                <form action="index.php?ctrller=product&act=search" method="post" style="width: 100%;" autocomplete="off" >
+                                <form action="index.php?ctrller=product&act=search" method="post" style="width: 100%;"
+                                    autocomplete="off">
                                     <input type="text" name="keyword" placeholder="Muốn tìm gì?" id="colors" required>
                                     <!-- <datalist id="colors" autocomplete="off">
                                         <option value="Red">
@@ -86,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-3"  style="padding-top: 20px;">
+                    <div class="col-lg-3 text-right col-md-3" style="padding-top: 20px;">
                         <ul class="nav-right">
                             <li class="heart-icon">
                                 <a href="#">
@@ -166,7 +171,8 @@
                                     ?>
                                     <div class="select-button">
                                         <a href="index.php?ctrller=cart" class="primary-btn view-card">GIỎ HÀNG</a>
-                                        <a href="?ctrller=cart&act=checkout" class="primary-btn checkout-btn">THANH TOÁN</a>
+                                        <a href="?ctrller=cart&act=checkout" class="primary-btn checkout-btn">THANH
+                                            TOÁN</a>
                                     </div>
                                 </div>
                             </li>

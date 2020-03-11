@@ -20,20 +20,23 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>Đăng ký</h2>
-                        <form action="" method="post">
+                        <form action="index.php?ctrller=home&act=register" method="post">
                             <div class="group-input">
-                                <label for="username">Tên đăng nhập hoặc địa chỉ Email của bạn *</label>
-                                <input type="text" id="username">
+                                <label for="username">Địa chỉ Email của bạn *</label>
+                                <input type="email" name="email" id="username" required>
                             </div>
                             <div class="group-input">
                                 <label for="pass">Mật khẩu *</label>
-                                <input type="text" id="pass">
+                                <input type="password" name="pass" id="pass" required>
                             </div>
                             <div class="group-input">
                                 <label for="con-pass">Nhập lại mật khẩu *</label>
-                                <input type="text" id="con-pass">
+                                <input type="password" name="re_pass" id="con-pass" required>
                             </div>
-                            <input type="submit" value="Đăng ký" name="register" class="site-btn register-btn">
+                            <input type="submit" value="Đăng ký" name="register_user" class="site-btn register-btn">
+                            <br>
+                            <br>
+                                <h5><center><strong>*** <?php if (isset($error_register)) echo $error_register ?> ***</strong></center></h5>
                         </form>
                         <div class="switch-login">
                             <a href="?ctrller?home&act=login" class="or-login">Đăng nhập</a>
