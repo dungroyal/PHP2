@@ -27,8 +27,9 @@
             case "changepassword":
                 if (isset($_POST['btn-changepassword']) && $_POST['btn-changepassword']) {
                     $username=$_POST['username'];
-                    $oldPass=$_POST['oldpassword'];
-                    $newPass=$_POST['newpassword'];
+                    $oldPass=$_POST['oldpass'];
+                    $newPass=$_POST['newpass'];
+                    $reNewPass=$_POST['re_newpass'];
 
                     if ($userObj->checkuser($username,$oldPass)) {
                         if ($newPass!="") {

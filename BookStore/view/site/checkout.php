@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Địa chỉ Email<span>*</span></label>
-                                <input type="text" name="email" id="email" required>
+                                <input type="text" name="email" value="<?=$_SESSION['user'];?>" id="email" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại<span>*</span></label>

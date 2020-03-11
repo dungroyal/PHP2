@@ -4348,3 +4348,24 @@ ol {
         padding-right: 15px;
     }
 }
+
+.custom_acc {
+    list-style: none;
+}
+
+.custom_acc ul a li {
+    margin-left: 17px;
+    padding-bottom: 6px;
+}
+
+.custom_acc ul a {
+    color: #000000;
+}
+
+.custom_acc ul a:hover {
+    color: red;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}

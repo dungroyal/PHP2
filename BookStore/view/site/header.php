@@ -44,16 +44,34 @@
                 </div>
                 <div class="ht-right">
                     <div class="lan-selector">
-                        <li class="dropdown"  style="list-style: none;">
-                            <div href="#" class="dropdown-toggle" data-toggle="dropdown">  &nbsp; &nbsp; &nbsp;<i class="fa fa-user"></i> Tài khoản</div>
-                            <ul class="dropdown-menu">
-                                <a href="?ctrller?home&act=login">
-                                    <li>Đăng nhập</li>
-                                </a>
-                                <a href="?ctrller=home&act=register">
-                                    <li>Đăng ký</li>
-                                </a>
-                            </ul>
+                        <li class="dropdown custom_acc"">
+                            <?php
+                                if (isset($_SESSION['user'])) {
+                                    echo '
+                                        <div href="#"  class="dropdown-toggle" data-toggle="dropdown">  &nbsp; &nbsp; &nbsp;<i class="fa fa-user"></i> '.$_SESSION['user'].'</div>
+                                        <ul class="dropdown-menu">
+                                            <a href="index.php?ctrller=home&act=change-password">
+                                                <li>Đổi mật khẩu</li>
+                                            </a>
+                                            <a href="index.php?ctrller=home&act=logout">
+                                                <li>Đăng xuất</li>
+                                            </a>
+                                        </ul>
+                                    ';
+                                }else{
+                                    echo'
+                                        <div href="#"  class="dropdown-toggle" data-toggle="dropdown">  &nbsp; &nbsp; &nbsp;<i class="fa fa-user"></i> Tài khoản</div>
+                                        <ul class="dropdown-menu">
+                                            <a href="?ctrller?home&act=login">
+                                                <li>Đăng nhập</li>
+                                            </a>
+                                            <a href="?ctrller=home&act=register">
+                                                <li>Đăng ký</li>
+                                            </a>
+                                        </ul>
+                                    ';
+                                }
+                            ?>
                         </li>
                     </div>
                     <div class="top-social">
