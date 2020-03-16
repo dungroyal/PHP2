@@ -29,9 +29,15 @@
 
         function updatePassword($email,$newpass)
         {
-            $this->SetQuery("UPDATE `admin` SET `password` = '".$newpass."' WHERE `admin`.`email` ='".$email."' ");
+            $this->SetQuery("UPDATE `user` SET `password` = '".$newpass."' WHERE `user`.`email` ='".$email."' ");
             $this->result=$this->ThucHienLenh();
             return $this->result;
+        }
+
+        function insert_user($name,$email,$pass,$level){
+            $query = "INSERT INTO `user`(`name`, `email`, `password`, `level`) VALUES ('".$name."','".$email."','".$pass."','".$level."')";
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
         }
     }   
 ?>

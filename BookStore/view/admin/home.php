@@ -150,7 +150,6 @@
                                                 <th>Name</th>
                                                 <th class="text-center">Giá</th>
                                                 <th class="text-center">Status</th>
-                                                <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -188,9 +187,6 @@
                                                         </td>
                                                         <td class="text-center">
                                                             '.$status.'
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
                                                         </td>
                                                     </tr>
                                                     ';

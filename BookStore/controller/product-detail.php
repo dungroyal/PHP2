@@ -1,6 +1,9 @@
 <?php
     include_once 'model/catalog.php';
     include_once 'model/product.php';
+    
+    $cata=new CATALOG();
+    $listCata=$cata->getAllCatalog();
 
     $action="product-detail";
     if(isset($_GET['act']))

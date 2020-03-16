@@ -84,18 +84,12 @@
 															<table width="660" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background-color:#ffffff;width:660px">
 					<tbody>
 						<tr>
-							<td background="http://choviet.xyz/uploads/santa-claus.png" bgcolor="#ffffff" width="660" valign="top" style="background:#ffffff url(http://choviet.xyz/uploads/santa-claus-png.png) no-repeat top center;background-size:660px auto;background-repeat:no-repeat;background-position:top center">
+							<td bgcolor="#ffffff" width="660" valign="top" style="background:#ffffff ">
 								<table align="left" width="400" border="0" cellpadding="0" cellspacing="0" style="width:400px;padding-bottom:38px">
 									<tbody>
 										<tr>
 											<td style="padding-bottom:5px;padding-top:37px;padding-left:60px">
-												<img src="http://choviet.xyz/view/img/logo/logo.png" alt="Chợ Việt logo" style="width: 65%;">
-											</td>
-										</tr>
-										<tr>
-											<td valign="top" style="padding-left:60px;padding-bottom:0px">
-												<img src="http://choviet.xyz/uploads/ChoViet_DELEVER.gif" alt="Success payment" style="width: 50%;margin: 0px;padding: 0px;"><br><br>
-												<p style="width=150%;color:#1e1f4e;font-family:Verdana;font-size:28px;font-weight:bold;line-height:normal;padding-top:0;padding-left:0;padding-bottom:0;padding-right:0;margin-left:0;margin-top:0;margin-bottom:0;margin-right:10px">Bạn đã đặt hàng thành công!</p>
+												<img src="http://doanquocdung.tk/Royal/logo.png" alt="Chợ Việt logo" style="width: 65%;">
 											</td>
 										</tr>
 									</tbody>

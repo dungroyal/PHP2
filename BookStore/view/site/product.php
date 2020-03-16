@@ -21,7 +21,6 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Danh mục</h4>
                         <ul class="filter-catagories">
-                        <li><a href="#">CATALOG</a></li>
                             <?php
                                 foreach ($listCata as $cata) {
                                     echo '

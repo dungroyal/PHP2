@@ -22,6 +22,10 @@
                         <h2>Đăng ký</h2>
                         <form action="index.php?ctrller=home&act=register" method="post">
                             <div class="group-input">
+                                <label for="name">Họ và Tên *</label>
+                                <input type="text" name="name" id="name" required>
+                            </div>
+                            <div class="group-input">
                                 <label for="username">Địa chỉ Email của bạn *</label>
                                 <input type="email" name="email" id="username" required>
                             </div>
