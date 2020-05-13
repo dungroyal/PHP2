@@ -13,5 +13,12 @@
             return $this->result;
         }   
 
+        
+        function insertPG($name,$id){
+            $query="INSERT INTO passengers ( name, flight_id) VALUES ('".$name."',".$id.")";
+            $this->SetQuery($query);
+            $this->result=$this->ThucHienLenh();
+        }
+
     }
 ?>

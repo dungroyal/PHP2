@@ -10,10 +10,21 @@
         $action=$_GET['act'];
         switch($action){
             case "index":
+                
                 $allFlights=$FL->getAllflights();
+                $allPassengers=$PG->getAllPassengers();
+                if (isset($_POST['btnBook'])&&$_POST['btnBook']) {
+                    $name=$_POST['name'];
+                    $idFlights=$_POST['flight'];
+
+                    $PG=new PASSENGER();
+                    $PG->insertPG($name,$idFlights);
+                    header('Location: index.php');
+                    
+                }
+                
                 $allPassengers=$PG->getAllPassengers();
                 include 'view/book.php';
                 break;
         }
-
 ?>

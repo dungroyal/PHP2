@@ -1,8 +1,8 @@
 <div class="container">
-    <form method="post" action="#">
+    <form method="post" action="index.php">
       <div class="form-group">
         <label>Chọn chuyến bay</label>
-        <select class="form-control" name="flight">
+        <select class="form-control" name="flight" required>
           <option value="" selected>--- Chọn chọn chuyến ---</option>
           <?php
             foreach ($allFlights as $fl) {
@@ -15,12 +15,13 @@
       </div>
       <div class="form-group">
         <label>Nhập tên của bạn</label>
-        <input type="text" class="form-control"  placeholder="input your name" name="name">
+        <input type="text" class="form-control"  placeholder="Input your name" name="name" required>
       </div>
       <div class="form-group">
-      <button type="submit" class="btn btn-primary" name="btnBook">Đăng ký</button>
+      <input type="submit"  class="btn btn-primary" name="btnBook" value='Đăng ký'>
       </div>
     </form>
+
     <div class="card">
       <div class="card-header">
         Danh sách hành khách đã đăng ký bay
