@@ -1,0 +1,365 @@
+main {
+    display: block;
+}
+
+/* FORMAT */
+
+.women-line-end {
+    width: 100%;
+    border: 0.5px solid black;
+    opacity: 0.1;
+    margin: 10px 0;
+}
+
+/* END FORMAT */
+
+/* ASIDE */
+
+.aside-area {
+    width: 25%;
+    float: left;
+}
+
+.aside-area i {
+    padding: 0 5px;
+}
+
+/* ASIDE TTITLE */
+
+.aside-title h1 {
+    text-align: left;
+}
+
+/* COLL WOMEN */
+
+.coll-women li {
+    display: block;
+    padding: 2px 0;
+}
+
+/* SUBMENU WOMEN */
+
+.submenu-women {
+    padding: 4px 0;
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+.submenu-women li p {
+    width: 30%;
+    display: inline-block;
+}
+
+.submenu-women li span {
+    margin-left: 64%;
+    font-size: 12px;
+}
+
+/* COLOR */
+
+.color-chung {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.color-women {
+    padding-right: 20px;
+}
+
+.color-mot {
+    background-color: #FF0000;
+}
+
+.color-hai {
+    background-color: #FFA500;
+}
+
+.color-ba {
+    background-color: #FFFF00;
+}
+
+.color-bon {
+    background-color: #008000;
+}
+
+.color-nam {
+    background-color: black;
+}
+
+.color-sau {
+    background-color: #C0C0C0;
+}
+
+.color-bay {
+    background-color: #0000FF;
+}
+
+.color-tam {
+    background-color: #808080;
+}
+
+.color-chin {
+    background-color: white;
+    border: 0.5px solid black;
+    opacity: 0.1;
+}
+
+.color-muoi {
+    background-color: #EE82EE;
+}
+
+.color-muoimot {
+    background-color: #F224D4;
+}
+
+/* SIZE */
+
+.size-checkbox {
+    width: 15%;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.size-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: 0.5px solid #eee;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.size-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.size-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 3px;
+    height: 7px;
+    border: solid rgb(88, 88, 88);
+    border-width: 0 1.5px 1.5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* BRAND = SIZE*/
+
+.brand-women .size-checkbox {
+    width: 50%;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+
+/* SEARCH */
+
+.search-input {
+    width: 60%;
+    float: left;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.search-txt {
+    width: 35%;
+    margin-left: 5%;
+    float: left;
+    border: 0.5px solid black;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+/* FEATURED */
+
+.feature-row {
+    margin-bottom: 10px;
+}
+
+.feature-col1 {
+    width: 40%;
+    float: left;
+}
+
+.feature-col2 {
+    width: 60%;
+    float: left;
+    padding: 0 15px;
+    font-size: 13px;
+}
+
+.feature-col2 p {
+    padding: 2px 0;
+}
+
+.feature-col2 p:first-child {
+    color: #858585;
+    font-size: 12px;
+}
+
+.feature-col2 p:last-child {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 32spx;
+}
+
+/* CUSTOM CMS */
+
+.cms-txt span {
+    font-size: 12px;
+}
+
+.cms-txt i {
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+}
+
+.cms-txt p {
+    font-size: 12px;
+    color: #858585;
+    margin-bottom: 10px;
+}
+
+/* NEWIN */
+
+.newin-images {
+    position: relative;
+    margin: 50px 0;
+    overflow: hidden;
+    max-height: 50vh;
+}
+
+.newin-content {
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    top: 70%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.newin-content p {
+    padding: 2px 0;
+    font-size: 16px;
+}
+
+.newin-content p:last-child {
+    font-size: 12px;
+    color: #858585;
+}
+
+.newin-images:hover img {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+/* END ASIDE */
+
+/* MAIN CONTENT */
+
+.main-content {
+    width: 75%;
+    float: left;
+}
+
+/* CONTENT BANNER */
+
+.main-content-banner {
+    overflow: hidden;
+    position: relative;
+    max-height: 50vh;
+}
+
+.main-content-banner img:hover{
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+.content-banner-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+.content-banner-txt p{
+    padding: 5px 0;
+}
+/* WOMEN PRODUCT */
+.women-product-title h1{
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+}
+.product-main-option{
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+.product-main-option p{
+    display: inline-block;
+}
+.product-main-option span{
+    margin-left: 20%;
+}
+/* PRODUCT DETAIL COL */
+.product-detail-col{
+    width: 33.33%;
+    float: left;
+}
+/*  */
+.loading{
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+.loading p{
+    background: black;
+    color: white;
+    padding: 10px 0;
+}
+.loading p:hover{
+    opacity: 0.8;
+}
+/*  */
+/* END MAIN CONTENT */

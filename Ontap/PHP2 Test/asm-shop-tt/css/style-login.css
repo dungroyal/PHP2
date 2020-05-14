@@ -1,0 +1,88 @@
+
+.login-line-end {
+    width: 100%;
+    border-top: 1px solid #141414;
+    opacity: 0.1;
+    margin: 30px 0;
+}
+
+.login-form, .signup-main {
+    width: 30%;
+    margin: 0 auto;
+}
+
+input, button {
+    width: 100%;
+    padding: 8px;
+}
+
+input:visited {
+    color: black;
+    border-color: black;
+}
+
+::placeholder {
+    font-size: 12px;
+    color: #858585;
+}
+
+.login-btn button {
+    background-color: black;
+    color: white;
+    border: black;
+    padding: 12px 0;
+    margin-top: 30px;
+}
+
+.login-btn button:hover {
+    background-color: white;
+    color: black;
+    border: 0.1px solid black;
+}
+
+p.h6 {
+    text-align: left;
+}
+
+.login-title h1 {
+    font-size: 28px;
+}
+
+.login-return-store, .login-forgot {
+    text-align: center;
+}
+
+.login-return-store p {
+    text-decoration: underline;
+}
+
+.login-forgot p {
+    font-size: 13px;
+    color: #858585;
+    text-decoration: underline;
+}
+
+.login-forgot p:hover {
+    color: black;
+}
+
+.login-title ul li {
+    padding: 5px 0 5px 15px;
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #858585;
+    letter-spacing: 0.2px;
+}
+
+.signup-btn button{
+    background-color: white;
+    color: black;
+    border: 0.5px solid black;
+    padding: 12px 0;
+}
+
+.signup-btn button:hover {
+    background-color: black;
+    color: white;
+}
